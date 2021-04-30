@@ -1,0 +1,159 @@
+{% set PROTOTYPEURL = "app/v8" %}
+{% set serviceName = "NHS App" %}
+{% set contentTitle = "Home" %}
+{% set title = contentTitle + " - " + serviceName %}
+{% set homeActive = "active" %}
+{% block pageScripts %}
+{% endblock %}
+
+
+<!-- Extends the layout from /app/views/layouts/layout.html -->
+{% extends 'layouts/layout-app-new.html' %}
+
+<!-- Set the page title inside this block -->
+{% block pageTitle %}
+  {{ title }}
+{% endblock %}
+
+<!-- Breadcrumb goes inside this block -->
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+
+    <h1 class="nhsuk-heading-xl nhsuk-u-margin-bottom-2">{{ contentTitle }}</h1>
+    {{ summaryList({
+      classes: 'nhsuk-summary-list--no-border nhs-app-summary-list-inline',
+      rows: [
+        {
+          key: {
+            text: "Name:"
+          },
+          value: {
+            text: "Mrs Betty Doyle"
+          }
+        },
+        {
+          key: {
+            text: "Date of birth:"
+          },
+          value: {
+            text: "20 September 1982"
+          }
+        },
+        {
+          key: {
+            text: "NHS number:"
+          },
+          value: {
+            text: "123 456 7890"
+          }
+        }
+      ]
+    }) }}
+
+
+
+
+
+          <div class="nhs-app-panel-heading">
+            <h2 class="nhsuk-heading-m">Popular services</h2>
+          </div>
+
+        <ul class="panel-link">
+
+
+          <li class="panel-link__item">
+            <h2 class="panel-link__heading nhsuk-heading-xs">
+            <a class="panel-link__link" href='{{ data["routeMessaging"] if data ["routeMessaging"] else "/app/messaging/v3/?messagingIcon=False&messageRead1=unread&pkbMessaging=False" }}'>
+              View your messages
+                {% if (data['messageRead7'] == "unread") %}
+                <span class="nhs-app-message__meta">
+                  <span class="nhsuk-u-visually-hidden">You have </span>
+                  <span class="nhs-app-message__count-red-home"></span>
+                  <span class="nhs-app-message__unread nhsuk-u-visually-hidden">
+                    unread messages
+                  </span>
+                </span>
+                {% endif %}
+
+            </a>
+          </h2>
+          </li>
+
+
+                  {% if data['linkedProfiles'] === "True" %}
+                  <li class="panel-link__item">
+                    <h2 class="panel-link__heading nhsuk-heading-xs">
+                    <a class="panel-link__link" href="/app/linked-profiles/profiles-list">Linked profiles</a>
+                  </h2>
+                  </li>
+                  {% else %}
+                  <li class="panel-link__item">
+                    <h2 class="panel-link__heading nhsuk-heading-xs">
+                    <a class="panel-link__link" href="/app/linked-profiles/no-linked-profiles">Linked profiles</a>
+                  </h2>
+                  </li>
+                  {% endif %}
+
+
+                  <li class="panel-link__item">
+                    <h2 class="panel-link__heading nhsuk-heading-xs">
+                      <a class="panel-link__link" href="/app/records/v1/">View your GP health record</a>
+                    </h2>
+                  </li>
+
+
+
+
+                {% if data['pickPharmacy'] %}
+
+                <li class="panel-link__item">
+                  <h2 class="panel-link__heading nhsuk-heading-xs">
+                    <a class="panel-link__link" href="/app/prescriptions/v8-acute-tpp/check-pharmacy">Order a repeat prescription</a>
+                  </h2>
+                </li>
+
+
+
+                 {% else %}
+
+
+                <li class="panel-link__item">
+                  <h2 class="panel-link__heading nhsuk-heading-xs">
+                    <a class="panel-link__link" href="/app/prescriptions/v8-acute-tpp/not-nominated-pharmacy">Order a repeat prescription</a>
+                  </h2>
+                </li>
+
+
+
+                {% endif %}
+
+
+
+
+
+
+            </ul>
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+
+
+
+
+
+
+{% endblock %}

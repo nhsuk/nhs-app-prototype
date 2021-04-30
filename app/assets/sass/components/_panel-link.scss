@@ -1,0 +1,56 @@
+// ==========================================================================
+// COMPONENTS / #PANEL-LINK
+// ==========================================================================
+
+
+.panel-link {
+  border-top: 1px $color_nhsuk-grey-4 solid;
+  font-size: 1em;
+  list-style: none;
+  margin-bottom: 1em;
+  padding-left: 0;
+  @media (max-width: 48.0525em) {
+    margin: 0 -1em 1em;
+  }
+}
+
+  .panel-link__item {
+    border-bottom: 1px $color_nhsuk-grey-4 solid;
+    margin-bottom: .2em;
+    padding: 0;
+  }
+
+  .panel-link__link {
+    background-color: $color_nhsuk-white;
+    background-image: url(../images/icon_arrow_left.svg);
+    background-position: right 1em center;
+    background-repeat: no-repeat;
+    color: $color_nhsuk-blue;
+    display: block;
+    padding: 10px 2em 10px 1em;
+    text-decoration: none;
+
+    &:hover {
+      box-shadow: 0 0 0 4px $color_nhsuk-yellow;
+      color: $color_nhsuk-blue;
+    }
+
+    &:hover h2 {
+      text-decoration: underline;
+    }
+
+    &:visited {
+      color: $color_nhsuk-blue;
+    }
+
+    .panel-link__heading {
+      margin: 0;
+      padding-bottom: 6px;
+    }
+
+    .panel-link__content {
+      color: $color_nhsuk-black;
+      margin-bottom: 0;
+    }
+
+  }

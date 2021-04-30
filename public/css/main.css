@@ -6080,3 +6080,41 @@ b {
     .nhsuk-related-nav__list {
       font-size: 14pt;
       line-height: 1.2; } }
+
+.panel-link {
+  border-top: 1px #d8dde0 solid;
+  font-size: 1em;
+  list-style: none;
+  margin-bottom: 1em;
+  padding-left: 0; }
+  @media (max-width: 48.0525em) {
+    .panel-link {
+      margin: 0 -1em 1em; } }
+
+.panel-link__item {
+  border-bottom: 1px #d8dde0 solid;
+  margin-bottom: .2em;
+  padding: 0; }
+
+.panel-link__link {
+  background-color: #ffffff;
+  background-image: url(../images/icon_arrow_left.svg);
+  background-position: right 1em center;
+  background-repeat: no-repeat;
+  color: #005eb8;
+  display: block;
+  padding: 10px 2em 10px 1em;
+  text-decoration: none; }
+  .panel-link__link:hover {
+    box-shadow: 0 0 0 4px #ffeb3b;
+    color: #005eb8; }
+  .panel-link__link:hover h2 {
+    text-decoration: underline; }
+  .panel-link__link:visited {
+    color: #005eb8; }
+  .panel-link__link .panel-link__heading {
+    margin: 0;
+    padding-bottom: 6px; }
+  .panel-link__link .panel-link__content {
+    color: #212b32;
+    margin-bottom: 0; }
