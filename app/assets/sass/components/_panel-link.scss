@@ -27,7 +27,7 @@
     background-repeat: no-repeat;
     color: $color_nhsuk-blue;
     display: block;
-    padding: 10px 2em 10px 1em;
+    padding: 16px;
     text-decoration: none;
 
     &:hover {
@@ -36,7 +36,7 @@
     }
 
     &:hover h2 {
-      text-decoration: underline;
+      text-decoration: none;
     }
 
     &:visited {
@@ -45,7 +45,8 @@
 
     .panel-link__heading {
       margin: 0;
-      padding-bottom: 6px;
+      padding-top: 4px;
+      padding-bottom: 4px;
     }
 
     .panel-link__content {

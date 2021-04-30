@@ -20,6 +20,7 @@
 {% endblock %}
 
 {% block content %}
+
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds">
 
@@ -67,8 +68,9 @@
 
 
           <li class="panel-link__item">
-            <h2 class="panel-link__heading nhsuk-heading-xs">
+            
             <a class="panel-link__link" href='{{ data["routeMessaging"] if data ["routeMessaging"] else "/app/messaging/v3/?messagingIcon=False&messageRead1=unread&pkbMessaging=False" }}'>
+              <h2 class="panel-link__heading nhsuk-heading-s">
               View your messages
                 {% if (data['messageRead7'] == "unread") %}
                 <span class="nhs-app-message__meta">
@@ -79,31 +81,29 @@
                   </span>
                 </span>
                 {% endif %}
-
+                </h2>
             </a>
-          </h2>
           </li>
 
 
                   {% if data['linkedProfiles'] === "True" %}
                   <li class="panel-link__item">
-                    <h2 class="panel-link__heading nhsuk-heading-xs">
-                    <a class="panel-link__link" href="/app/linked-profiles/profiles-list">Linked profiles</a>
-                  </h2>
+                    <a class="panel-link__link" href="/app/linked-profiles/profiles-list">
+                      <h2 class="panel-link__heading nhsuk-heading-s">Linked profiles</h2>
+                    </a>
                   </li>
                   {% else %}
                   <li class="panel-link__item">
-                    <h2 class="panel-link__heading nhsuk-heading-xs">
-                    <a class="panel-link__link" href="/app/linked-profiles/no-linked-profiles">Linked profiles</a>
-                  </h2>
+                    <a class="panel-link__link" href="/app/linked-profiles/no-linked-profiles">
+                      <h2 class="panel-link__heading nhsuk-heading-s">Linked profiles</h2>
+                    </a>
                   </li>
                   {% endif %}
 
 
                   <li class="panel-link__item">
-                    <h2 class="panel-link__heading nhsuk-heading-xs">
-                      <a class="panel-link__link" href="/app/records/v1/">View your GP health record</a>
-                    </h2>
+                      <a class="panel-link__link" href="/app/records/v1/"><h2 class="panel-link__heading nhsuk-heading-s">View your GP health record</h2>
+                      </a>
                   </li>
 
 
@@ -112,9 +112,10 @@
                 {% if data['pickPharmacy'] %}
 
                 <li class="panel-link__item">
-                  <h2 class="panel-link__heading nhsuk-heading-xs">
-                    <a class="panel-link__link" href="/app/prescriptions/v8-acute-tpp/check-pharmacy">Order a repeat prescription</a>
-                  </h2>
+                  <a class="panel-link__link" href="/app/prescriptions/v8-acute-tpp/check-pharmacy">
+                    <h2 class="panel-link__heading nhsuk-heading-s">Order a repeat prescription</h2>
+                  </a>
+                
                 </li>
 
 
@@ -123,9 +124,9 @@
 
 
                 <li class="panel-link__item">
-                  <h2 class="panel-link__heading nhsuk-heading-xs">
-                    <a class="panel-link__link" href="/app/prescriptions/v8-acute-tpp/not-nominated-pharmacy">Order a repeat prescription</a>
-                  </h2>
+                    <a class="panel-link__link" href="/app/prescriptions/v8-acute-tpp/not-nominated-pharmacy">
+                      <h2 class="panel-link__heading nhsuk-heading-s">Order a repeat prescription</h2>
+                    </a>
                 </li>
 
 
@@ -150,10 +151,5 @@
 
     </div>
   </div>
-
-
-
-
-
 
 {% endblock %}

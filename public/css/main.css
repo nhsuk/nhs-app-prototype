@@ -6081,6 +6081,17 @@ b {
       font-size: 14pt;
       line-height: 1.2; } }
 
+.nhs-app-panel-heading {
+  margin-bottom: 0; }
+  @media (max-width: 48.0525em) {
+    .nhs-app-panel-heading {
+      margin: 0 -1em 0; } }
+  .nhs-app-panel-heading h1, .nhs-app-panel-heading h2, .nhs-app-panel-heading h3, .nhs-app-panel-heading h4, .nhs-app-panel-heading h5 {
+    background-color: white;
+    padding: 0.5em 16px 0.5em 16px;
+    border-top: 1px solid #d8dde0;
+    margin-bottom: 0; }
+
 .panel-link {
   border-top: 1px #d8dde0 solid;
   font-size: 1em;
@@ -6103,18 +6114,19 @@ b {
   background-repeat: no-repeat;
   color: #005eb8;
   display: block;
-  padding: 10px 2em 10px 1em;
+  padding: 16px;
   text-decoration: none; }
   .panel-link__link:hover {
     box-shadow: 0 0 0 4px #ffeb3b;
     color: #005eb8; }
   .panel-link__link:hover h2 {
-    text-decoration: underline; }
+    text-decoration: none; }
   .panel-link__link:visited {
     color: #005eb8; }
   .panel-link__link .panel-link__heading {
     margin: 0;
-    padding-bottom: 6px; }
+    padding-top: 4px;
+    padding-bottom: 4px; }
   .panel-link__link .panel-link__content {
     color: #212b32;
     margin-bottom: 0; }
