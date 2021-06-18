@@ -8,7 +8,7 @@
 
 
 <!-- Extends the layout from /app/views/layouts/layout.html -->
-{% extends 'layouts/layout-app-new.html' %}
+{% extends 'layouts/layout.html' %}
 
 <!-- Set the page title inside this block -->
 {% block pageTitle %}
@@ -68,7 +68,7 @@
 
 
           <li class="panel-link__item">
-            
+
             <a class="panel-link__link" href='{{ data["routeMessaging"] if data ["routeMessaging"] else "/app/messaging/v3/?messagingIcon=False&messageRead1=unread&pkbMessaging=False" }}'>
               <h2 class="panel-link__heading nhsuk-heading-s">
               View your messages
@@ -115,7 +115,7 @@
                   <a class="panel-link__link" href="/app/prescriptions/v8-acute-tpp/check-pharmacy">
                     <h2 class="panel-link__heading nhsuk-heading-s">Order a repeat prescription</h2>
                   </a>
-                
+
                 </li>
 
 
@@ -133,20 +133,7 @@
 
                 {% endif %}
 
-
-
-
-
-
             </ul>
-
-
-
-
-
-
-
-
 
 
     </div>

@@ -1,0 +1,126 @@
+// ==========================================================================
+// COMPONENTS / #DESKTOP-HEADER
+// ==========================================================================
+
+
+
+
+    .nhsuk-header__link-app-online {
+      @include nhsuk-logo-size; /* [1] */
+      display: block;
+    }
+
+
+    @media (min-width: 61.875em) {
+.nhsuk-header__navigation-link {
+    color: #fff;
+    font-size: 17px;
+    line-height: normal;
+}
+}
+
+.header-links {
+    display: block;
+    text-decoration: none;
+    display: inline-block;
+    color: #fff;
+    padding: .5em;
+}
+
+
+.nhsuk-header__navigation-item {
+  margin: 0;
+  color: #fff;
+  flex-grow: 1;
+  text-align: center;
+  }
+
+  .nhsuk-header__navigation-item:visited {
+    color: #ffffff; }
+  .nhsuk-header__navigation-item:hover {
+    background-color: #003d78;
+    box-shadow: none;
+    text-decoration: underline;
+  }
+  .nhsuk-header__navigation-item:focus {
+    color: #ffffff;
+    outline: none;
+    background-color: transparent;
+    text-decoration: underline;
+}
+  .nhsuk-header__navigation-item:active {
+    background-color: #002f5c;
+    color: #f0f4f5; }
+  .nhsuk-header__navigation-item.is-active {
+    background-color: #004b93; }
+
+
+
+
+
+    .nhsuk-header__link--service-app-online {
+      height: auto;
+      margin-bottom: -(nhsuk-spacing(1));
+      text-decoration: none;
+      width: auto;
+
+
+      @include mq($from: tablet) {
+        -ms-flex-align: center;
+        align-items: center;
+        display: flex;
+        margin-bottom: 0;
+        width: auto;
+      }
+
+      &:focus,
+      &:hover {
+
+        background: none;
+
+        .nhsuk-header__service-name {
+          text-decoration: underline;
+        }
+
+      }
+
+    }
+
+
+    .nhsuk-header__link--service-app-online:hover {
+        background-color: #003d78;
+        box-shadow: 0 0 0 4px #003d78;
+    }
+
+
+
+
+
+
+
+.nhsuk-header__navigation-link-log-out {
+  color: #ffffff;
+  font-size: 16px;
+  line-height: normal;
+  display: inline-block;
+  padding: .5em;
+  text-decoration: none;
+}
+  .nhsuk-header__navigation-link-log-out:visited {
+    color: #ffffff; }
+  .nhsuk-header__navigation-link-log-out:hover {
+    background-color: #003d78;
+    box-shadow: none;
+    text-decoration: underline;
+  }
+  .nhsuk-header__navigation-link-log-out:focus {
+    color: #ffffff;
+    outline: none;
+    background-color: transparent;
+    text-decoration: underline;
+}
+  .nhsuk-header__navigation-link-log-out:active {
+    background-color: #002f5c;
+    color: #f0f4f5; }
+  .nhsuk-header__navigation-link-log-out.is-active {
+    background-color: #004b93; }
