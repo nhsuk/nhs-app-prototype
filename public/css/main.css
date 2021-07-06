@@ -6149,6 +6149,9 @@ b {
   display: inline-block;
   color: #fff;
   padding: .5em; }
+  @media (min-width: 40.0625em) and (max-width: 61.865em) {
+    .header-links {
+      display: none; } }
 
 .nhsuk-header__navigation-item {
   margin: 0;
@@ -6345,27 +6348,17 @@ nav.menu ul li:last-of-type {
 
 @media (max-width: 40.0525em) {
   .nhs-app-logo_header-3 {
-    text-align: left;
-    padding-left: 6px;
-    margin-top: 3px; }
+    float: right; }
     .nhs-app-logo_header-3 svg {
       height: 28px;
       width: auto; } }
 
 @media (min-width: 40.0625em) {
-  .nhs-app-logo_header-3 {
-    padding-left: 190px;
-    margin-top: 3px; }
-    .nhs-app-logo_header-3 svg {
-      height: 28px;
-      width: auto; } }
-
-.footer-labels__link {
-  text-decoration: none;
-  margin-top: -3px; }
+  .nhs-app-logo_header-3 svg {
+    height: 28px;
+    width: auto; } }
 
 .nhs-app-header__icon_header-3 {
-  display: inline-block;
   width: 24px;
   height: 24px;
   text-align: center;

@@ -48,10 +48,8 @@
 
 .nhs-app-logo_header-3 {
   @include mq($until: tablet) {
+    float: right;
 
-  text-align: left;
-  padding-left: 6px;
-  margin-top:3px;
   svg {
     height: 28px;
     width: auto;
@@ -59,8 +57,7 @@
 }
 
 @include mq($from: tablet) {
-  padding-left: 190px;
-  margin-top:3px;
+
   svg {
     height: 28px;
     width: auto;
@@ -70,16 +67,11 @@
 
 
 
-  .footer-labels__link {
 
-    text-decoration: none;
-    margin-top: -3px;
-  }
 
 
 .nhs-app-header__icon_header-3 {
 
-  display:inline-block;
   width: 24px;
   height:24px;
   text-align: center;

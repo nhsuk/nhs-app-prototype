@@ -20,6 +20,10 @@
 }
 
 .header-links {
+      @media (min-width: 40.0625em) and (max-width: 61.865em)
+    {
+        display: none;
+    }
     display: block;
     text-decoration: none;
     display: inline-block;
