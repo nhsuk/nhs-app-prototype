@@ -6081,6 +6081,45 @@ b {
       font-size: 14pt;
       line-height: 1.2; } }
 
+.app-card {
+  padding: 32px; }
+
+.desktop-app-card {
+  padding: 32px; }
+
+.nhs-app-button--delete {
+  background-color: #b12116;
+  box-shadow: 0 4px 0 #290805; }
+  .nhs-app-button--delete:hover {
+    background-color: #8d1a12;
+    cursor: default; }
+  .nhs-app-button--delete:focus {
+    outline: none;
+    background-color: #8d1a12; }
+  .nhs-app-button--delete:active {
+    box-shadow: 0 4px 0 #7a1710;
+    top: 0; }
+
+.nhslogin-button {
+  background-color: #005bb3;
+  box-shadow: 0 4px 0 #002a52; }
+  .nhslogin-button:hover {
+    background-color: #003f7b;
+    cursor: default; }
+  .nhslogin-button:focus {
+    outline: none;
+    background-color: #003f7b; }
+  .nhslogin-button:active {
+    box-shadow: 0 4px 0 #003f7b;
+    top: 0; }
+
+main.nhs-app-main-login form {
+  text-align: center;
+  width: 100%; }
+
+main.nhs-app-main-login .nhs-app-u-button-full {
+  width: 100%; }
+
 .nhs-app-panel-heading {
   margin-bottom: 0; }
   @media (max-width: 48.0525em) {

@@ -1,0 +1,81 @@
+{% extends 'layouts/login-layout.html' %}
+
+{% block pageTitle %}
+  Login screen
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+
+      <h1>
+        Access your NHS services
+      </h1>
+
+  <div data-v-04c3b376="" class="nhsuk-grid-row">
+    <div data-v-04c3b376="" class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-0">
+      <p data-v-04c3b376="" id="desktopSpecificInformation"> Use NHS App online to access services on your desktop or laptop computer, through your web browser.  You do not need to install anything to get started.</p>
+      <p data-v-04c3b376="" class="nhsuk-u-margin-bottom-4">Use this service to:</p>
+      <ul data-v-04c3b376="">
+        <li data-v-04c3b376="" class="nhsuk-u-margin-bottom-3">get your NHS COVID Pass</li>
+        <li data-v-04c3b376="" class="nhsuk-u-margin-bottom-3">order repeat prescriptions</li>
+        <li data-v-04c3b376="" class="nhsuk-u-margin-bottom-3">book and manage appointments</li>
+        <li data-v-04c3b376="" class="nhsuk-u-margin-bottom-3">get health information and advice</li>
+        <li data-v-04c3b376="" class="nhsuk-u-margin-bottom-3">view your health record securely</li>
+        <li data-v-04c3b376="">view your NHS number</li>
+      </ul>
+    </div>
+    <div data-v-04c3b376="" class="nhsuk-grid-column-one-third login_nhs-app-mobile-hide_1NKSS">
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+          <h3 class="nhsuk-card__heading">
+            Get the NHS App on your smartphone or tablet
+          </h3>
+          <ul data-v-19cf09f6="">
+            <li data-v-19cf09f6=""><a data-v-19cf09f6="" data-id="apple-store-icon" aria-label="Download on the App Store" href="https://apps.apple.com/gb/app/nhs-app/id1388411277" target="_blank" rel="noopener noreferrer" class="nhsuk-u-margin-bottom-2 nhsuk-u-margin-right-3"><img data-v-19cf09f6="" alt="Download on the App Store" src="/images/app-store-badge.png"></a></li>
+            <li data-v-19cf09f6=""><a data-v-19cf09f6="" data-id="play-store-icon" aria-label="Get it on Google Play" href="https://play.google.com/store/apps/details?id=com.nhs.online.nhsonline" target="_blank" rel="noopener noreferrer"><img data-v-19cf09f6="" alt="Get it on Google Play" src="/images/google-play-badge.png"></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div data-v-66e7d998="" data-v-04c3b376="" class="nhsuk-grid-row">
+    <div data-v-66e7d998="" class="nhsuk-grid-column-two-thirds">
+      <div data-v-66e7d998="" id="before-you-start" class="nhsuk-u-margin-top-1">
+        <div data-v-66e7d998="">
+          <h2 data-v-66e7d998="" class="nhsuk-u-margin-bottom-3"> Before you start </h2>
+          <p data-v-66e7d998="">To use this service you must be:</p>
+          <ul data-v-66e7d998="">
+            <li data-v-66e7d998="" class="nhsuk-u-margin-bottom-3"> registered with a GP surgery in England </li>
+            <li data-v-66e7d998="" class="nhsuk-u-margin-bottom-3"> aged 13 and over </li>
+          </ul>
+        </div>
+        <details data-v-66e7d998="" class="nhsuk-details" id="age-info" nhsuk-polyfilled="true">
+          <summary aria-controls="nhsuk-details__text" aria-expanded="false" class="nhsuk-details__summary" role="button" tabindex="0">
+            <span class="nhsuk-details__summary-text nhsuk-u-margin-bottom-1"> What to do if you're aged 13 to 15 </span>
+          </summary>
+          <div id="nhsuk-details__text" aria-hidden="true" class="nhsuk-details__text">
+            <p data-v-66e7d998="">You'll need to contact your GP surgery first and request access to GP online services.</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </div>
+
+  <div data-v-c461f508="" data-v-04c3b376="" class="Login_loginMain-desktop_G-imJ">
+    <div data-v-c461f508="" data-v-04c3b376="">
+      <form action="/home" method="post">
+        <input class="nhsuk-button nhslogin-button nhs-app-u-button-full" type="submit" value="Continue with NHS login">
+      </form>
+    </div>
+  </div>
+  <div data-v-73fb460e="" data-v-04c3b376="" id="other-services">
+    <p data-v-73fb460e="">Other services you can use without logging in:</p>
+    <ul data-v-73fb460e="">
+      <li data-v-73fb460e="" class="nhsuk-u-margin-bottom-3"><a data-v-73fb460e="" href="https://www.nhs.uk/conditions/" target="_blank" rel="noopener noreferrer"> Search conditions and treatments </a></li>
+    </ul>
+  </div>
+
+{% endblock %}
