@@ -6170,104 +6170,39 @@ main.nhs-app-main-login .nhs-app-u-button-full {
     color: #212b32;
     margin-bottom: 0; }
 
-.nhsuk-header__link-app-online {
-  height: 40px;
-  width: 100px;
-  /* [1] */
-  display: block; }
+@media (max-width: 481px) {
+  .nhsuk-header__menu--only .nhsuk-header__menu-toggle {
+    display: none; } }
 
-@media (min-width: 61.875em) {
+@media (max-width: 481px) {
+  .nhsuk-header__container {
+    display: none; } }
+
+@media (max-width: 990px) {
+  .nhsuk-header__navigation {
+    display: none; } }
+
+@media (min-width: 990px) {
+  .nhsuk-header-menu-services {
+    display: none; } }
+
+@media (max-width: 990px) {
   .nhsuk-header__navigation-link {
-    color: #fff;
-    font-size: 17px;
-    line-height: normal; } }
+    font-size: 19px; } }
 
-.header-links {
-  display: block;
-  text-decoration: none;
-  display: inline-block;
-  color: #fff;
-  padding: .5em; }
-  @media (min-width: 40.0625em) and (max-width: 61.865em) {
-    .header-links {
+.nhsuk-header__right-nav {
+  float: right;
+  margin-top: 8px; }
+  @media (max-width: 990px) {
+    .nhsuk-header__right-nav {
       display: none; } }
-
-.nhsuk-header__navigation-item {
-  margin: 0;
-  color: #fff;
-  flex-grow: 1;
-  text-align: center; }
-
-.nhsuk-header__navigation-item:visited {
-  color: #ffffff; }
-
-.nhsuk-header__navigation-item:hover {
-  background-color: #003d78;
-  box-shadow: none;
-  text-decoration: underline; }
-
-.nhsuk-header__navigation-item:focus {
-  color: #ffffff;
-  outline: none;
-  background-color: transparent;
-  text-decoration: underline; }
-
-.nhsuk-header__navigation-item:active {
-  background-color: #002f5c;
-  color: #f0f4f5; }
-
-.nhsuk-header__navigation-item.is-active {
-  background-color: #004b93; }
-
-.nhsuk-header__link--service-app-online {
-  height: auto;
-  margin-bottom: -4px;
-  text-decoration: none;
-  width: auto; }
-  @media (min-width: 40.0625em) {
-    .nhsuk-header__link--service-app-online {
-      -ms-flex-align: center;
-      align-items: center;
-      display: flex;
-      margin-bottom: 0;
-      width: auto; } }
-  .nhsuk-header__link--service-app-online:focus, .nhsuk-header__link--service-app-online:hover {
-    background: none; }
-    .nhsuk-header__link--service-app-online:focus .nhsuk-header__service-name, .nhsuk-header__link--service-app-online:hover .nhsuk-header__service-name {
+  .nhsuk-header__right-nav a {
+    color: #ffffff;
+    text-decoration: none; }
+    .nhsuk-header__right-nav a:hover {
       text-decoration: underline; }
-
-.nhsuk-header__link--service-app-online:hover {
-  background-color: #003d78;
-  box-shadow: 0 0 0 4px #003d78; }
-
-.nhsuk-header__navigation-link-log-out {
-  color: #ffffff;
-  font-size: 16px;
-  line-height: normal;
-  display: inline-block;
-  padding: .5em;
-  text-decoration: none; }
-
-.nhsuk-header__navigation-link-log-out:visited {
-  color: #ffffff; }
-
-.nhsuk-header__navigation-link-log-out:hover {
-  background-color: #003d78;
-  box-shadow: none;
-  text-decoration: underline; }
-
-.nhsuk-header__navigation-link-log-out:focus {
-  color: #ffffff;
-  outline: none;
-  background-color: transparent;
-  text-decoration: underline; }
-
-.nhsuk-header__navigation-link-log-out:active {
-  background-color: #002f5c;
-  color: #f0f4f5; }
-
-.nhsuk-header__navigation-link-log-out.is-active {
-  background-color: #004b93; }
+  .nhsuk-header__right-nav strong {
+    color: #ffffff; }
 
 @media (max-width: 40.0525em) {
   .menu .nhsuk-width-container {
