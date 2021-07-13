@@ -29,6 +29,7 @@
 
   background-color: darken($color_nhsuk-blue, 1%);
   box-shadow: 0 $button-shadow-size 0 darken($color_nhsuk-blue, 20%); // s0
+  cursor: pointer!important;
 
 
   &:hover {
@@ -37,16 +38,24 @@
   }
 
   &:focus {
-    outline: none;
-    background-color: darken($color_nhsuk-blue, 12%);
-  }
+    background-color: #ffeb3b!important;
+    border: 2px solid transparent!important;
+    box-shadow: 0 4px 0 0 #212b32!important;
+    color: #212b32;
+    outline: 4px solid transparent;
+    outline-offset: 4px;
+}
+
 
   &:active {
-    box-shadow: 0 $button-shadow-size 0 darken($color_nhsuk-blue, 12%); // s0
-    top: 0;
+    background-color: #005bb3;
+    box-shadow: none!important;
+    top: 4px;
   }
 
 }
+
+
 
 main.nhs-app-main-login {
   form {

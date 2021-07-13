@@ -2,13 +2,13 @@
 // COMPONENTS / #NATIVE-FOOTER
 // ==========================================================================
 
+
 .menu {
-  .nhsuk-width-container {
-    @include mq($until: tablet) {
-     margin: 0;
+    @media(min-width: 481px) {
+      display: none;
     }
   }
-}
+
 
 nav.menu {
   background-color: #ffffff;
@@ -28,7 +28,7 @@ nav.menu {
     flex-wrap: wrap;
     padding-left: 0.375em;
     padding-right: 0.375em; }
-    
+
     nav.menu ul li {
       flex-grow: 1;
       text-align: center;
@@ -67,6 +67,12 @@ nav.menu {
         display: block;
         margin: 0 auto;
         text-decoration: none;
+
+        &:focus {
+          background-color: transparent;
+          box-shadow: none;
+          outline: none;
+         }
       }
 
 nav.menu ul li:last-of-type {

@@ -6102,16 +6102,22 @@ b {
 
 .nhslogin-button {
   background-color: #005bb3;
-  box-shadow: 0 4px 0 #002a52; }
+  box-shadow: 0 4px 0 #002a52;
+  cursor: pointer !important; }
   .nhslogin-button:hover {
     background-color: #003f7b;
     cursor: default; }
   .nhslogin-button:focus {
-    outline: none;
-    background-color: #003f7b; }
+    background-color: #ffeb3b !important;
+    border: 2px solid transparent !important;
+    box-shadow: 0 4px 0 0 #212b32 !important;
+    color: #212b32;
+    outline: 4px solid transparent;
+    outline-offset: 4px; }
   .nhslogin-button:active {
-    box-shadow: 0 4px 0 #003f7b;
-    top: 0; }
+    background-color: #005bb3;
+    box-shadow: none !important;
+    top: 4px; }
 
 main.nhs-app-main-login form {
   text-align: center;
@@ -6204,9 +6210,13 @@ main.nhs-app-main-login .nhs-app-u-button-full {
   .nhsuk-header__right-nav strong {
     color: #ffffff; }
 
-@media (max-width: 40.0525em) {
-  .menu .nhsuk-width-container {
-    margin: 0; } }
+@media (max-width: 481px) {
+  .footer-show {
+    display: none; } }
+
+@media (min-width: 481px) {
+  .menu {
+    display: none; } }
 
 nav.menu {
   background-color: #ffffff;
@@ -6268,6 +6278,10 @@ nav.menu li a {
   display: block;
   margin: 0 auto;
   text-decoration: none; }
+  nav.menu li a:focus {
+    background-color: transparent;
+    box-shadow: none;
+    outline: none; }
 
 nav.menu ul li:last-of-type {
   margin-bottom: 8px; }
@@ -6287,57 +6301,112 @@ nav.menu ul li:last-of-type {
   box-sizing: border-box;
   align-self: flex-end; }
 
-.nhs-app-header--app {
+.nhsuk-header_app {
   padding: 10px 0;
   position: sticky;
-  position: -webkit-sticky;
   top: 0;
   width: 100%;
   z-index: 1;
-  height: 54px; }
+  height: 56px; }
+  @media (min-width: 482px) {
+    .nhsuk-header_app {
+      display: none; } }
 
 .nhs-app-header__icon_header-home {
-  display: inline-block;
   width: 24px;
   height: 24px;
-  text-align: center;
-  margin: 0px 95px 0px 18px;
-  float: left; }
+  margin-left: 18px; }
 
-.header-labels {
-  display: block;
+.header-label-home {
   font-weight: 500;
-  font-size: 10px;
-  line-height: 1.563em;
-  color: #ffffff;
-  display: block;
-  box-sizing: border-box;
-  align-self: center;
-  margin-top: -4px; }
+  font-size: 10px; }
+  .header-label-home a {
+    color: #ffffff;
+    text-decoration: none; }
+  .header-label-home span {
+    margin-left: -1px; }
 
-@media (min-width: 20em) {
-  .nhs-app-u-one-third-mobile {
-    float: left;
-    width: 33.33333% !important; } }
+.nhs-logo-header {
+  position: fixed;
+  top: 4%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+  .nhs-logo-header svg {
+    height: 28px;
+    width: auto; }
 
-@media (max-width: 40.0525em) {
-  .nhs-app-logo_header-3 {
-    float: right; }
-    .nhs-app-logo_header-3 svg {
-      height: 28px;
-      width: auto; } }
+.nhs-app-header__icon_header-help {
+  width: 24px;
+  height: 24px;
+  float: right;
+  margin-right: 18px;
+  margin-top: -20px; }
+
+.header-label-help {
+  font-weight: 500;
+  font-size: 10px; }
+  .header-label-help svg {
+    margin-bottom: -4px; }
+  .header-label-help a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-bottom: 0px; }
+  .header-label-help span {
+    margin-left: 1.8px; }
+
+.nhs-app-header__icon_header-more {
+  width: 24px;
+  height: 24px;
+  float: right;
+  margin-right: 18px;
+  margin-top: -20px; }
+
+.header-label-more {
+  font-weight: 500;
+  font-size: 10px; }
+  .header-label-more svg {
+    margin-bottom: -4px; }
+  .header-label-more a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-bottom: 0px; }
+  .header-label-more span {
+    margin-left: -1px; }
+
+.no-bullets {
+  list-style-type: none;
+  padding: 0; }
+
+.store-icon-heading {
+  font-size: 19px; }
 
 @media (min-width: 40.0625em) {
-  .nhs-app-logo_header-3 svg {
-    height: 28px;
-    width: auto; } }
+  .nhs-app-summary-list-inline .nhsuk-summary-list__key, .nhs-app-summary-list-inline .nhsuk-summary-list__value {
+    padding-top: 0;
+    padding-bottom: 4px;
+    max-width: 70%; } }
 
-.nhs-app-header__icon_header-3 {
-  width: 24px;
-  height: 24px;
-  text-align: center;
-  margin: 0px 18px 0px 5px;
-  float: right; }
+@media (min-width: 40.0625em) {
+  .nhs-app-summary-list-inline .nhsuk-summary-list__key {
+    width: 30%;
+    vertical-align: top; } }
+
+@media (max-width: 40.0525em) {
+  .nhs-app-summary-list-inline .nhsuk-summary-list__row {
+    margin-bottom: 0; } }
+
+@media (max-width: 40.0525em) {
+  .nhs-app-summary-list-inline .nhsuk-summary-list__key {
+    display: inline-block;
+    width: 40%;
+    vertical-align: top; } }
+
+@media (max-width: 40.0525em) {
+  .nhs-app-summary-list-inline .nhsuk-summary-list__value {
+    display: inline-block;
+    margin-bottom: 4px;
+    vertical-align: baseline;
+    max-width: 60%; } }
 
 @media (max-width: 40.0525em) {
   .nhs-app-mobile--hide {
