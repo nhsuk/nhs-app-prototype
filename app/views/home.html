@@ -69,70 +69,43 @@
 
 
           <li class="panel-link__item">
+            <a class="panel-link__link" href="#">
+              <h2 class="panel-link__heading nhsuk-heading-s">Get your NHS COVID Pass</h2>
+              <p class="panel-link__content">View and share your COVID Pass for events in England and travel abroad</p>
+            </a>
+          </li>      
 
-            <a class="panel-link__link" href='{{ data["routeMessaging"] if data ["routeMessaging"] else "/app/messaging/v3/?messagingIcon=False&messageRead1=unread&pkbMessaging=False" }}'>
-              <h2 class="panel-link__heading nhsuk-heading-s">
-              View your messages
-                {% if (data['messageRead7'] == "unread") %}
-                <span class="nhs-app-message__meta">
-                  <span class="nhsuk-u-visually-hidden">You have </span>
-                  <span class="nhs-app-message__count-red-home"></span>
-                  <span class="nhs-app-message__unread nhsuk-u-visually-hidden">
-                    unread messages
-                  </span>
-                </span>
-                {% endif %}
-                </h2>
+
+          <li class="panel-link__item">
+            <a class="panel-link__link" href="#">
+              <h2 class="panel-link__heading nhsuk-heading-s">View your messages</h2>
             </a>
           </li>
 
-
-                  {% if data['linkedProfiles'] === "True" %}
                   <li class="panel-link__item">
-                    <a class="panel-link__link" href="/app/linked-profiles/profiles-list">
+                    <a class="panel-link__link" href="#">
                       <h2 class="panel-link__heading nhsuk-heading-s">Linked profiles</h2>
                     </a>
                   </li>
-                  {% else %}
-                  <li class="panel-link__item">
-                    <a class="panel-link__link" href="/app/linked-profiles/no-linked-profiles">
-                      <h2 class="panel-link__heading nhsuk-heading-s">Linked profiles</h2>
-                    </a>
-                  </li>
-                  {% endif %}
+
 
 
                   <li class="panel-link__item">
-                      <a class="panel-link__link" href="/app/records/v1/"><h2 class="panel-link__heading nhsuk-heading-s">View your GP health record</h2>
+                      <a class="panel-link__link" href="#">
+                        <h2 class="panel-link__heading nhsuk-heading-s">View your GP health record</h2>
                       </a>
                   </li>
 
 
 
 
-                {% if data['pickPharmacy'] %}
-
                 <li class="panel-link__item">
-                  <a class="panel-link__link" href="/app/prescriptions/v8-acute-tpp/check-pharmacy">
+                  <a class="panel-link__link" href="#">
                     <h2 class="panel-link__heading nhsuk-heading-s">Order a repeat prescription</h2>
                   </a>
 
                 </li>
 
-
-
-                 {% else %}
-
-
-                <li class="panel-link__item">
-                    <a class="panel-link__link" href="/app/prescriptions/v8-acute-tpp/not-nominated-pharmacy">
-                      <h2 class="panel-link__heading nhsuk-heading-s">Order a repeat prescription</h2>
-                    </a>
-                </li>
-
-
-
-                {% endif %}
 
             </ul>
 
