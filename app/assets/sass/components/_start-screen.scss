@@ -118,6 +118,10 @@
       }
 
       .app-main-wrapper--none {
-        padding-top: 0!important;
-        padding-bottom: 0!important;
+
+        @include mq($until: tablet) {
+          padding-top: 0!important;
+          padding-bottom: 0!important;
+        }
+
       }
