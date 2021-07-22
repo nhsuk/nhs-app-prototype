@@ -1,7 +1,6 @@
 
-{% set mainClasses = "app-main-wrapper--hubs" %}
 
-{% set PROTOTYPEURL = "app/prescriptions" %}
+{% set PROTOTYPEURL = "prescriptions" %}
 {% set serviceName = "NHS App" %}
 {% set contentTitle = "Prescriptions" %}
 {% set title = contentTitle + " - " + serviceName %}
@@ -47,7 +46,7 @@
     <h1 class="nhsuk-heading-xl nhsuk-u-margin-bottom-5">{{ contentTitle }}</h1>
 
 
-    <form action="#" method="post">
+    <form action="/{{ PROTOTYPEURL }}/not-nominated" method="post">
       <button class="nhsuk-button" type="submit">
         Order a repeat prescription
       </button>
@@ -66,7 +65,7 @@
                   <li class="panel-link__item">
                     <a class="panel-link__link" href="#">
                       <h2 class="panel-link__heading nhsuk-heading-s">Nominate a pharmacy</h2>
-                      <p class="panel-link__content">Boots</p>
+                      <p class="panel-link__content">Choose a pharmacy for your prescriptions to be sent to</p>
                     </a>
                   </li>
 

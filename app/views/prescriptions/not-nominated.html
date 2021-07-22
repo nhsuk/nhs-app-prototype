@@ -1,10 +1,10 @@
 
 
-{% set PROTOTYPEURL = "app/appointments" %}
+{% set PROTOTYPEURL = "prescriptions" %}
 {% set serviceName = "NHS App" %}
-{% set contentTitle = "Appointments" %}
+{% set contentTitle = "You have not nominated a pharmacy" %}
 {% set title = contentTitle + " - " + serviceName %}
-{% set appointmentsActive = "active" %}
+{% set prescriptionsActive = "active" %}
 {% block pageScripts %}
 {% endblock %}
 
@@ -48,28 +48,32 @@
 
 
 
-                <ul class="panel-link">
-
-                  <li class="panel-link__item">
-                    <a class="panel-link__link" href="#">
-                      <h2 class="panel-link__heading nhsuk-heading-s">GP surgery appointments</h2>
-                      <p class="panel-link__content">View and manage appointments at your surgery</p>
-                    </a>
-                  </li>
-
-                  <li class="panel-link__item">
-                    <a class="panel-link__link" href="#">
-                      <h2 class="panel-link__heading nhsuk-heading-s">Hospital and other appointments</h2>
-                      <p class="panel-link__content">View and manage appointments, like your referral appointments</p>
-                    </a>
-                  </li>
+          {{ warningCallout({
+            "heading": "Important",
+            "HTML": "<p>This means you'll collect a paper prescription from your GP.</p>"
+          }) }}
 
 
-                </ul>
+          <p>If you nominate a pharmacy, your prescription will be sent there.
+
+          <p><a href="#">Nominate a pharmacy</a></p>
+
+
+          <form action="/{{ PROTOTYPEURL }}/select-medicine" method="get">
+            <input type="submit" class="nhsuk-button" value="Continue without nominating">
+            </input>
+          </form>
+
+
+                <p class="desktop-back-link">
+                  <a href="javascript: window.history.go(-1)">Back</a>
+                </p>
+
 
 
     </div>
   </div>
+
 
 
 {% endblock %}

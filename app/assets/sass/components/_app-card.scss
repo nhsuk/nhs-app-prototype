@@ -1,5 +1,5 @@
 // ==========================================================================
-// COMPONENTS / #APP-CARD
+// COMPONENTS / #APP-CARDS
 // ==========================================================================
 
 .app-card {
@@ -8,4 +8,13 @@
 
   .desktop-app-card {
     padding: 32px;
+    }
+
+
+    .nhs-app-prescription-card {
+      border: 1px solid #aeb7bd;
+      padding: 20px;
+      dt {
+        font-weight: normal;
+      }
     }

@@ -7,9 +7,18 @@
 <!-- Extends the layout from /docs/views/template.html -->
 {% extends "template.html" %}
 
+<!-- Adds a custom class to the <main> wrapper -->
+<!-- nhsuk-main-wrapper--s reduces top and bottom padding of the page -->
+
+
+  {% set mainClasses = 'nhs-app-thin' %}
+  {% set html_style = 'background-color: #f0f4f5;' %}
+
+
 <!-- Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 {% block headCSS %}
   <link href="/css/main.css" rel="stylesheet">
+
 {% endblock %}
 
 <!-- Set the page title -->

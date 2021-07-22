@@ -7,6 +7,8 @@ module.exports = function (env) {
    */
   var filters = {}
 
+
+
   /* ------------------------------------------------------------------
     add your methods to the filters obj below this comment block:
     @example:
@@ -41,5 +43,11 @@ module.exports = function (env) {
   /* ------------------------------------------------------------------
     keep the following line to return your filters to the app
   ------------------------------------------------------------------ */
+
+
+  filters.stringOrNot = function(obj) {
+  return typeof obj == 'string';
+}
+
   return filters
 }
