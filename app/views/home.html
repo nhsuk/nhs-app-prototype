@@ -96,16 +96,15 @@
                   </li>
 
 
-
-
                 <li class="panel-link__item">
-                  <a class="panel-link__link" href="#">
+                  {% if data['nominatedPharmacy'] %}
+                  <a class="panel-link__link" href="/prescriptions/check-nom">
+                  {% else %}
+                  <a class="panel-link__link" href="/prescriptions/not-nominated">
+                  {% endif %}
                     <h2 class="panel-link__heading nhsuk-heading-s">Order a repeat prescription</h2>
                   </a>
-
                 </li>
-
-
             </ul>
 
 

@@ -152,9 +152,44 @@
 
     <h2>What happens next</h2>
 
+    {% if data['nominatedPharmacy'] %}
+
+    <p>Your prescription request has been sent to your GP surgery.</p>
+
+    <p>Once a GP approves it, they'll send your prescription to your nominated pharmacy, {{ data["nominatedPharmacy"] or "Boots" }}.</p>
+
+      <p class="nhsuk-u-margin-bottom-0">{{ data["nominatedPharmacy"] or "Boots" }}</p>
+
+      <p class="nhsuk-u-margin-bottom-0">{{ data["address"] or "City Station" }}</p>
+
+      {% if data['address2'] %}
+      <p class="nhsuk-u-margin-bottom-0">{{ data["address2"] }}</p>
+      {% else %}
+      {% endif %}
+
+      <p class="nhsuk-u-margin-bottom-0">{{ data["city"] or "Leeds" }}</p>
+
+      {% if data['county'] %}
+      <p class="nhsuk-u-margin-bottom-0">{{ data["county"] }}</p>
+      {% else %}
+      {% endif %}
+
+      <p class="nhsuk-u-margin-bottom-0">{{ data["postcode"] or "LS1 4DT" }}</p>
+
+      <p>Telephone: {{ data["phoneNumber"] or "0113 242 1713" }}</p>
+
+    {% else %}
+
     <p>Your prescription request has been sent to your GP surgery.</p>
 
     <p>Once they approve your prescription, you'll need to collect it from your GP surgery.</p>
+
+    {% endif %}
+
+
+
+
+
 
                 <p>
                   <a href="/{{ PROTOTYPEURL }}/your-orders">Go to your prescription orders</a>
