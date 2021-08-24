@@ -2,13 +2,13 @@
 {% set serviceName = "NHS App" %}
 {% set symptomsActive = "active" %}
 {% set contentTitle = "Get medical help" %}
-{% set bodyClasses = "login" %}
+{% set bodyClasses = "oneOneOneBody" %}
 {% set title = contentTitle + " - " + serviceName %}
 {% block pageScripts %}
 {% endblock %}
 
 <!-- Extends the layout from /app/views/layouts/layout.html -->
-{% extends 'layouts/layout.html' %}
+{% extends 'layouts/111-layout.html' %}
 
 <!-- Set the page title inside this block -->
 {% block pageTitle %}
@@ -34,10 +34,11 @@
       </button>
     </form>
 
-    <hr>
+    <hr class="oneOneOneHR">
 
     <p>Always follow any medical advice you’ve already been given by your doctor. See our <a href="">terms</a>.</p>
 
     </div>
+  
   </div>
 {% endblock %}
