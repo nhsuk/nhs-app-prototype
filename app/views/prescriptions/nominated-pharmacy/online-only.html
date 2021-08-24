@@ -1,8 +1,8 @@
 
 
-{% set PROTOTYPEURL = "prescriptions" %}
+{% set PROTOTYPEURL = "prescriptions/nominated-pharmacy" %}
 {% set serviceName = "NHS App" %}
-{% set contentTitle = "You have not nominated a pharmacy" %}
+{% set contentTitle = "Register with the online-only pharmacy directly" %}
 {% set title = contentTitle + " - " + serviceName %}
 {% set prescriptionsActive = "active" %}
 {% block pageScripts %}
@@ -42,34 +42,13 @@
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds">
 
+    <h1 class="nhsuk-heading-xl nhsuk-u-margin-bottom-2">{{ contentTitle }}</h1>
 
-    <h1 class="nhsuk-heading-xl nhsuk-u-margin-bottom-5">{{ contentTitle }}</h1>
+    <p>To nominate an online-only pharmacy, you must register with the pharmacy through their website or contact them.</p>
 
+    <p><a href="https://www.nhs.uk/Service-Search/other-services/pharmacies/internetpharmacies">View a list of online-only pharmacies</a></p>
 
-
-
-          {{ warningCallout({
-            "heading": "Important",
-            "HTML": "<p>This means you'll collect a paper prescription from your GP.</p>"
-          }) }}
-
-
-          <p>If you nominate a pharmacy, your prescription will be sent there.
-
-          <p><a href="/{{ PROTOTYPEURL }}/nominated-pharmacy/card-no-nom">Nominate a pharmacy</a></p>
-
-
-          <form action="/{{ PROTOTYPEURL }}/select-medicine" method="get">
-            <input type="submit" class="nhsuk-button" value="Continue without nominating">
-            </input>
-          </form>
-
-
-                <p class="desktop-back-link">
-                  <a href="javascript: window.history.go(-1)">Back</a>
-                </p>
-
-
+    <p><a href="/prescriptions/hub">Go back to your prescriptions</a><p>
 
     </div>
   </div>

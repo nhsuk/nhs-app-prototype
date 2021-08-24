@@ -143,11 +143,35 @@ Notes for your GP surgery
 <dt class="nhsuk-summary-list__key">
 Your nominated pharmacy
 </dt>
+
+{% if data['nominatedPharmacy'] %}
+<p class="nhsuk-u-margin-bottom-0">{{ data["nominatedPharmacy"] or "Boots" }}</p>
+
+<p class="nhsuk-u-margin-bottom-0">{{ data["address"] or "City Station" }}</p>
+
+{% if data['address2'] %}
+<p class="nhsuk-u-margin-bottom-0">{{ data["address2"] }}</p>
+{% else %}
+{% endif %}
+
+<p class="nhsuk-u-margin-bottom-0">{{ data["city"] or "Leeds" }}</p>
+
+{% if data['county'] %}
+<p class="nhsuk-u-margin-bottom-0">{{ data["county"] }}</p>
+{% else %}
+{% endif %}
+
+<p class="nhsuk-u-margin-bottom-0">{{ data["postcode"] or "LS1 4DT" }}</p>
+
+<p>Telephone: {{ data["phoneNumber"] or "0113 242 1713" }}</p>
+{% else %}
 <dd class="nhsuk-summary-list__value">
   You do not have a nominated pharmacy.
 
  Collect your paper prescription from your GP surgery when it's ready.
 </dd>
+{% endif %}
+
 
 
 </div>
@@ -157,10 +181,12 @@ Your nominated pharmacy
 
 
 
-           <form action="/{{ PROTOTYPEURL }}/order-confirmed" method="post">
+           <form action="/prescriptions/save" method="post">
              <input type="submit" class="nhsuk-button" value="Confirm and order prescriptions">
              </input>
            </form>
+
+
 
                 <p class="desktop-back-link">
                   <a href="javascript: window.history.go(-1)">Back</a>

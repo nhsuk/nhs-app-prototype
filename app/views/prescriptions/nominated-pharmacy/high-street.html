@@ -1,8 +1,8 @@
 
 
-{% set PROTOTYPEURL = "prescriptions" %}
+{% set PROTOTYPEURL = "prescriptions/nominated-pharmacy" %}
 {% set serviceName = "NHS App" %}
-{% set contentTitle = "You have not nominated a pharmacy" %}
+{% set contentTitle = "Find a high street pharmacy" %}
 {% set title = contentTitle + " - " + serviceName %}
 {% set prescriptionsActive = "active" %}
 {% block pageScripts %}
@@ -42,25 +42,22 @@
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds">
 
+    <h1 class="nhsuk-heading-xl nhsuk-u-margin-bottom-2">{{ contentTitle }}</h1>
 
-    <h1 class="nhsuk-heading-xl nhsuk-u-margin-bottom-5">{{ contentTitle }}</h1>
-
-
-
-
-          {{ warningCallout({
-            "heading": "Important",
-            "HTML": "<p>This means you'll collect a paper prescription from your GP.</p>"
-          }) }}
+    <form action="/{{ PROTOTYPEURL }}/search-results" method="post">
 
 
-          <p>If you nominate a pharmacy, your prescription will be sent there.
 
-          <p><a href="/{{ PROTOTYPEURL }}/nominated-pharmacy/card-no-nom">Nominate a pharmacy</a></p>
-
-
-          <form action="/{{ PROTOTYPEURL }}/select-medicine" method="get">
-            <input type="submit" class="nhsuk-button" value="Continue without nominating">
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="example-with-hint-text">
+          Enter a full postcode in England
+        </label>
+        <div class="nhsuk-hint" id="example-with-hint-text-hint">
+          For example, LS1 1AB
+        </div>
+        <input class="nhsuk-input nhsuk-input--width-10" id="example-with-hint-text" name="pharmacyPostcode" type="text" aria-describedby="example-with-hint-text-hint" inputmode="numeric">
+      </div>
+            <input type="submit" class="nhsuk-button" value="Search">
             </input>
           </form>
 
