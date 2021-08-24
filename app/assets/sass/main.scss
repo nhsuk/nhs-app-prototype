@@ -8,9 +8,11 @@
 // Add your custom CSS/Sass styles below...
 ///////////////////////////////////////////
 @import 'components/app-card';
+@import 'components/app-template';
 @import 'components/buttons';
 @import 'components/panel-heading';
 @import 'components/panel-link';
+@import 'components/prescriptions';
 @import 'components/desktop-header';
 @import 'components/desktop-footer';
 @import 'components/native-footer';
@@ -19,40 +21,4 @@
 @import 'components/summary-list-home';
 @import 'components/breadcrumbs';
 @import 'components/start-screen';
-
-
-.nhs-app-thin {
-
-  padding: 1.5em 0 5em;
-
-  @include mq($from: desktop) {
-    padding-top: 3em;
-  }
-}
-
-.desktop-back-link {
-  @media(max-width: 481px) {
-    display: none;
-  }
-}
-
-.prescription-description {
-    color: #425563;
-}
-
-
-.app-main-wrapper--none {
-   @include mq($until: tablet) {
-     padding-top: 0;
-     padding-bottom: 0;
-   }
- }
-
- .get-advice-link {
-    color: #ffffff!important;
-}
-
-
-body.web {
-  background-color: #f0f4f5!important;
-}
+@import 'components/nominated-pharmacy';

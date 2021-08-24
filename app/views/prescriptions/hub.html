@@ -45,8 +45,11 @@
 
     <h1 class="nhsuk-heading-xl nhsuk-u-margin-bottom-5">{{ contentTitle }}</h1>
 
-
+    {% if data['nominatedPharmacy'] %}
+    <form action="/{{ PROTOTYPEURL }}/check-nom" method="post">
+    {% else %}
     <form action="/{{ PROTOTYPEURL }}/not-nominated" method="post">
+    {% endif %}
       <button class="nhsuk-button" type="submit">
         Order a repeat prescription
       </button>
@@ -55,19 +58,30 @@
 
                 <ul class="panel-link">
 
+
                   <li class="panel-link__item">
-                    <a class="panel-link__link" href="#">
+                    <a class="panel-link__link" href="/{{ PROTOTYPEURL }}/your-orders">
                       <h2 class="panel-link__heading nhsuk-heading-s">View your orders</h2>
                       <p class="panel-link__content">See repeat prescriptions you have ordered</p>
                     </a>
                   </li>
 
+                  {% if data['nominatedPharmacy'] %}
                   <li class="panel-link__item">
-                    <a class="panel-link__link" href="#">
+                    <a class="panel-link__link" href="/{{ PROTOTYPEURL }}/nominated-pharmacy/your-nominated-pharmacy">
+                      <h2 class="panel-link__heading nhsuk-heading-s">Your nominated pharmacy</h2>
+                      <p class="panel-link__content">{{ data["nominatedPharmacy"] or "Boots" }}</p>
+                    </a>
+                  </li>
+
+                  {% else %}
+                  <li class="panel-link__item">
+                    <a class="panel-link__link" href="/{{ PROTOTYPEURL }}/nominated-pharmacy/card-no-nom">
                       <h2 class="panel-link__heading nhsuk-heading-s">Nominate a pharmacy</h2>
                       <p class="panel-link__content">Choose a pharmacy for your prescriptions to be sent to</p>
                     </a>
                   </li>
+                  {% endif %}
 
                 </ul>
 

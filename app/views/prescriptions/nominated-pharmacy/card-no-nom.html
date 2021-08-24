@@ -1,8 +1,8 @@
 
 
-{% set PROTOTYPEURL = "prescriptions" %}
+{% set PROTOTYPEURL = "prescriptions/nominated-pharmacy" %}
 {% set serviceName = "NHS App" %}
-{% set contentTitle = "You have not nominated a pharmacy" %}
+{% set contentTitle = "The pharmacy you choose is where your prescriptions will be sent" %}
 {% set title = contentTitle + " - " + serviceName %}
 {% set prescriptionsActive = "active" %}
 {% block pageScripts %}
@@ -46,21 +46,8 @@
     <h1 class="nhsuk-heading-xl nhsuk-u-margin-bottom-5">{{ contentTitle }}</h1>
 
 
-
-
-          {{ warningCallout({
-            "heading": "Important",
-            "HTML": "<p>This means you'll collect a paper prescription from your GP.</p>"
-          }) }}
-
-
-          <p>If you nominate a pharmacy, your prescription will be sent there.
-
-          <p><a href="/{{ PROTOTYPEURL }}/nominated-pharmacy/card-no-nom">Nominate a pharmacy</a></p>
-
-
-          <form action="/{{ PROTOTYPEURL }}/select-medicine" method="get">
-            <input type="submit" class="nhsuk-button" value="Continue without nominating">
+          <form action="/{{ PROTOTYPEURL }}/choose-type" method="get">
+            <input type="submit" class="nhsuk-button" value="Continue">
             </input>
           </form>
 
