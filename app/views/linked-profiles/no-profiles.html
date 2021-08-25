@@ -1,8 +1,8 @@
 
 
-{% set PROTOTYPEURL = "more" %}
+{% set PROTOTYPEURL = "linked-profiles" %}
 {% set serviceName = "NHS App" %}
-{% set contentTitle = "Account and settings" %}
+{% set contentTitle = "Linked profiles" %}
 {% set title = contentTitle + " - " + serviceName %}
 {% set moreActive = "active" %}
 {% block pageScripts %}
@@ -45,35 +45,17 @@
 
     <h1 class="nhsuk-heading-xl nhsuk-u-margin-bottom-5">{{ contentTitle }}</h1>
 
+    <p>You do not have any linked profiles set up on your account.</p>
 
+    <p>Family members and carers can access health services on behalf of someone else through linked profiles.</p>
 
+    <p>You can book appointments for them, order repeat prescriptions, and view their health record, where appropriate.</p>
 
-                <ul class="panel-link">
+    <p><a href="https://www.nhs.uk/nhs-app/nhs-app-help-and-support/linked-profiles-in-the-nhs-app/">Find out more about linked profiles</a></p>
 
-                  <li class="panel-link__item">
-                    <a class="panel-link__link" href="/{{ PROTOTYPEURL }}/touch-id">
-                      <h2 class="panel-link__heading nhsuk-heading-s">Touch ID</h2>
-                    </a>
-                  </li>
+    <h2>Add a linked profile</h2>
+    <p>Contact the GP surgery of the person you would like to set up a linked profile for, and ask them to register you for proxy access.</p>
 
-                  <li class="panel-link__item">
-                    <a class="panel-link__link" href="/{{ PROTOTYPEURL }}/manage-nhs-login">
-                      <h2 class="panel-link__heading nhsuk-heading-s">Manage NHS login account</h2>
-                    </a>
-                  </li>
-
-                  <li class="panel-link__item">
-                    <a class="panel-link__link" href="/{{ PROTOTYPEURL }}/manage-notifications">
-                      <h2 class="panel-link__heading nhsuk-heading-s">Manage notifications</h2>
-                    </a>
-                  </li>
-
-                  <li class="panel-link__item">
-                    <a class="panel-link__link" href="/{{ PROTOTYPEURL }}/legal-and-cookies">
-                      <h2 class="panel-link__heading nhsuk-heading-s">Legal and cookies</h2>
-                    </a>
-                  </li>
-                </ul>
 
     </div>
   </div>

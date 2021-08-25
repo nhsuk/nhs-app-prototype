@@ -1,6 +1,6 @@
 
 
-{% set PROTOTYPEURL = "app/more" %}
+{% set PROTOTYPEURL = "more" %}
 {% set serviceName = "NHS App" %}
 {% set contentTitle = "More" %}
 {% set title = contentTitle + " - " + serviceName %}
@@ -48,33 +48,30 @@
 
 
 
-                <ul class="panel-link nhsuk-u-margin-bottom-6">
+    <ul class="panel-link">
 
                   <li class="panel-link__item">
-                    <a class="panel-link__link" href="/">
+                    <a class="panel-link__link" href="/linked-profiles/no-profiles">
                       <h2 class="panel-link__heading nhsuk-heading-s">Linked profiles</h2>
                     </a>
                   </li>
 
-                </ul>
-
-                <ul class="panel-link">
 
                   <li class="panel-link__item">
-                    <a class="panel-link__link" href="/more/account-settings">
+                    <a class="panel-link__link" href="/{{ PROTOTYPEURL }}/account-settings">
                       <h2 class="panel-link__heading nhsuk-heading-s">Account and settings</h2>
                     </a>
                   </li>
 
                   <li class="panel-link__item">
-                    <a class="panel-link__link" href="/">
+                    <a class="panel-link__link" href="https://www.nhs.uk/nhs-app/nhs-app-help-and-support/">
                       <h2 class="panel-link__heading nhsuk-heading-s">Help and support</h2>
                     </a>
                   </li>
 
                 </ul>
 
-                <form action="#" method="post">
+                <form action="#" method="post" class="native-log-out">
                   <button class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-top-5" type="submit">
                     Log out
                   </button>
