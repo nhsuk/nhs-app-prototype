@@ -1,6 +1,6 @@
 
 
-{% set PROTOTYPEURL = "app/your-health" %}
+{% set PROTOTYPEURL = "your-health" %}
 {% set serviceName = "NHS App" %}
 {% set contentTitle = "Your health" %}
 {% set title = contentTitle + " - " + serviceName %}
@@ -50,21 +50,21 @@
                 <ul class="panel-link">
 
                   <li class="panel-link__item">
-                    <a class="panel-link__link" href="#">
+                    <a class="panel-link__link" href="/{{ PROTOTYPEURL }}/covid-status/start-page">
                       <h2 class="panel-link__heading nhsuk-heading-s">Get your NHS COVID Pass</h2>
                       <p class="panel-link__content">View and share your COVID Pass for events in England and travel abroad</p>
                     </a>
                   </li>
 
                   <li class="panel-link__item">
-                    <a class="panel-link__link" href="#">
+                    <a class="panel-link__link" href="/{{ PROTOTYPEURL }}/check-covid-record/dose-details">
                       <h2 class="panel-link__heading nhsuk-heading-s">Check your COVID-19 vaccine record</h2>
                       <p class="panel-link__content">View your vaccination details, like the name and batch number, and report any side effects you have experienced</p>
                     </a>
                   </li>
 
                   <li class="panel-link__item">
-                    <a class="panel-link__link" href="#">
+                    <a class="panel-link__link" href="/{{ PROTOTYPEURL }}/gp-record/warning">
                       <h2 class="panel-link__heading nhsuk-heading-s">GP health record</h2>
                       <p class="panel-link__content">View allergies, medicines, test results and more in your GP health record</p>
                     </a>
@@ -79,7 +79,7 @@
                   </li>
 
                   <li class="panel-link__item">
-                    <a class="panel-link__link" href="#">
+                    <a class="panel-link__link" href="/{{ PROTOTYPEURL }}/data-opt-out/overview">
                       <h2 class="panel-link__heading nhsuk-heading-s">Choose if data from your health records is shared for research and planning</h2>
                       <p class="panel-link__content">Find out how the NHS uses your confidential patient information and choose whether or not it can be used for research and planning</p>
                     </a>
