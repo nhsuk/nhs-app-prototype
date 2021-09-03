@@ -27,3 +27,26 @@ router.post('/prescriptions/save', function (req, res) {
 });
 
 module.exports = router;
+
+
+//Messages
+
+
+router.post('/messages/send-a-message', function (req, res) {
+  let answer = req.body.urgentAdvice;
+  if (answer === 'yes') {
+    res.redirect('/messages/urgent')
+  } else {
+    res.redirect('/messages/select-who-to-message')
+  }
+});
+
+
+//Log out and clear data
+
+router.get('/more/hub/log-out', function (req, res) {
+
+  req.session.data = {}
+  res.redirect('/start')
+
+});

@@ -30,7 +30,7 @@
 
 <nav class="nhsuk-breadcrumb nhsuk-breadcrumb-native" aria-label="Breadcrumb">
   <div class="nhsuk-width-container">
-    <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="/home">Back</a></p>
+    <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="javascript: window.history.go(-1)">Back</a></p>
   </div>
 </nav>
 {% endblock %}
@@ -72,7 +72,7 @@
 
 
                   <li class="panel-link__item">
-                    <a class="panel-link__link" href="#">
+                    <a class="panel-link__link" href="/{{ PROTOTYPEURL }}/organ-donation/donates-all">
                       <h2 class="panel-link__heading nhsuk-heading-s">Manage your organ donation decision</h2>
                       <p class="panel-link__content">Help save thousands of lives in the UK every year by signing up to become a donor on the NHS Organ Donor Register</p>
                     </a>

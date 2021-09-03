@@ -1,6 +1,6 @@
 
 
-{% set PROTOTYPEURL = "app/appointments" %}
+{% set PROTOTYPEURL = "appointments" %}
 {% set serviceName = "NHS App" %}
 {% set contentTitle = "Appointments" %}
 {% set title = contentTitle + " - " + serviceName %}
@@ -30,7 +30,7 @@
 
 <nav class="nhsuk-breadcrumb nhsuk-breadcrumb-native" aria-label="Breadcrumb">
   <div class="nhsuk-width-container">
-    <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="/home">Back</a></p>
+    <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="javascript: window.history.go(-1)">Back</a></p>
   </div>
 </nav>
 {% endblock %}
@@ -47,18 +47,17 @@
 
 
 
-
                 <ul class="panel-link">
 
                   <li class="panel-link__item">
-                    <a class="panel-link__link" href="#">
+                    <a class="panel-link__link" href="/{{ PROTOTYPEURL }}/appointments-unavailable">
                       <h2 class="panel-link__heading nhsuk-heading-s">GP surgery appointments</h2>
                       <p class="panel-link__content">View and manage appointments at your surgery</p>
                     </a>
                   </li>
 
                   <li class="panel-link__item">
-                    <a class="panel-link__link" href="#">
+                    <a class="panel-link__link" href="/{{ PROTOTYPEURL }}/hospital-and-other">
                       <h2 class="panel-link__heading nhsuk-heading-s">Hospital and other appointments</h2>
                       <p class="panel-link__content">View and manage appointments, like your referral appointments</p>
                     </a>

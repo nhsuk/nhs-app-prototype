@@ -1,21 +1,13 @@
-{% set PROTOTYPEURL = "app/covid-status/status-service-v4" %}
+
+
+
+{% set PROTOTYPEURL = "your-health/covid-status" %}
 {% set serviceName = "NHS App" %}
-{% set recordActive = "active" %}
-{% set contentTitle = "Mrs Betty Doyle" %}
-{% set title = contentTitle + " - " + serviceName %}
+{% set contentTitle = "Betty Doyle" %}
+{% set yourHealthActive = "active" %}
+
 {% block pageScripts %}
 <script>
-$("#dose2").click(function(){
- $(".dosediv2").toggleClass("show");
- $(".card-with-chevron-down-expanded").toggleClass("rotate");
-});
-
-
-$("#dose1").click(function(){
- $(".dosediv1").toggleClass("show");
- $(".card-with-chevron-down-expanded-2").toggleClass("rotate");
-});
-
 
 $("#showEmail").click(function(){
  $(".email").toggleClass("show");
@@ -27,16 +19,16 @@ $("#showEmail").click(function(){
 
 
 <!-- Extends the layout from /app/views/layouts/layout.html -->
-{% extends 'layouts/layout-app-new-covid-status.html' %}
+{% extends 'layouts/layout-covid-status.html' %}
 
-<!-- Set the page title inside this block -->
+
+<!-- Set the page title -->
 {% block pageTitle %}
-  {{ title }}
+  {{ contentTitle }} - {{ serviceName }}
 {% endblock %}
 
 <!-- Breadcrumb goes inside this block -->
 {% block beforeContent %}
-
 {% endblock %}
 
 {% block content %}
@@ -52,20 +44,20 @@ $("#showEmail").click(function(){
                 Go back</a>
             </div>
 
-      <h1 class="nhs-app-xl nhsuk-heading-l nhsuk-u-margin-bottom-0">{{ contentTitle }}</h1>
+      <h1 class="nhsuk-heading-s nhsuk-u-margin-bottom-0">{{ contentTitle }}</h1>
 
       <p>Date of birth: 20 September 1982</p>
 
       <p class="covid-qr-expire nhsuk-u-margin-bottom-0">Your NHS COVID Pass expires</p>
-      <strong><p class="covid-qr-expire nhsuk-body-l covid-expire-date">19 August 2021 5.30pm</p></strong>
+      <strong><p class="covid-qr-expire covid-expire-date">19 August 2021 at 5.30pm</p></strong>
 
 
       <div class="covid-qr-image">
       <img src="/images/qrcode-white.png" alt="Image of a QR code" width="250" height="250">
     </div>
 
-    <div class="green-bg nhsuk-u-margin-bottom-4">
-      <svg class="covid-status-tick-v4" width="26px" height="26px" viewBox="0 0 26 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <div class="green-bg center-align nhsuk-u-margin-bottom-4">
+      <svg class="covid-status-tick" width="26px" height="26px" viewBox="0 0 26 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <g id="Colour-scheme" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
           <g id="icon-tick">
             <circle id="Oval" fill="#FFFFFF" cx="13" cy="13" r="13"></circle>
@@ -73,7 +65,7 @@ $("#showEmail").click(function(){
           </g>
         </g>
       </svg>
-      <span class="nobr">Valid in England</span>
+      <span class="valid-england">Valid in England</span>
     </div>
 
 
@@ -84,7 +76,7 @@ $("#showEmail").click(function(){
 
   <div class="nhsuk-card nhsuk-u-margin-bottom-2">
     <div class="nhsuk-card__content_less-padding">
-      <a class="covid-link download-link--netco" href="/{{ PROTOTYPEURL }}/qr-code-domestic">
+      <a class="covid-link download-link--bold" href="#">
         <svg class="covid-status-icons" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
           <title>file_download_blue</title>
           <g id="Colour-scheme" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -102,7 +94,7 @@ $("#showEmail").click(function(){
 <div class="nhsuk-card nhsuk-u-margin-bottom-2">
 <div class="nhsuk-card__content_less-padding">
 
-  <a id="showEmail" class="covid-link card-with-chevron-down-expanded card-with-chevron-down-expanded--netco" href="javascript:void(0);" style="text-decoration: none;">
+  <a id="showEmail" class="covid-link download-link--bold card-with-chevron-down-expanded card-with-chevron-down-expanded--covid" href="javascript:void(0);" style="text-decoration: none;">
     <svg class="covid-status-icons" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
       <title>email-icon</title>
       <g id="Colour-scheme" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -112,16 +104,16 @@ $("#showEmail").click(function(){
         </g>
       </g>
     </svg>
-    Receive a copy by email
+    Receive an offline copy by email
   </a>
 
-  <div class="email nhsuk-u-margin-top-4">
+  <div class="email nhsuk-u-margin-top-4 email-drop-down">
     <div class="nhsuk-card__description covid-card__description">
       <div class="nhsuk-form-group">
         <label class="nhsuk-label covid-label" for="input-width-20">
           Please confirm your email address:
         </label>
-        <input class="nhsuk-input nhsuk-input--width-20" id="input-width-20" name="test-width-20" type="text">
+        <input class="nhsuk-input nhsuk-input--width-20" id="input-width-20" name="test-width-20" type="text" value="betty.doyle@hotmail.com">
       </div>
       <button class="nhsuk-button nhsuk-u-margin-bottom-1" type="submit">
         Confirm and send email
@@ -132,12 +124,11 @@ $("#showEmail").click(function(){
 </div>
 </div>
 
-{% if data['p5_status'] === 'False' %}
 
 <div class="nhsuk-card nhsuk-u-margin-bottom-6">
 <div class="nhsuk-card__content_less-padding">
 
-  <a id="showEmail" class="covid-link card-with-chevron-right" href="records" style="text-decoration: none; font-weight: bold;">
+  <a id="showEmail" class="covid-link card-with-chevron-right download-link--bold" href="/{{ PROTOTYPEURL }}/records">
     <svg style="margin-bottom: -6px;" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#005EB8">
       <g fill="none"><path d="M0 0h24v24H0V0z"/><path d="M0 0h24v24H0V0z" opacity=".87"/></g>
       <path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7zm-4 6h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"/>
@@ -150,22 +141,6 @@ $("#showEmail").click(function(){
 
 </div>
 </div>
-
-
-
-{% endif %}
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

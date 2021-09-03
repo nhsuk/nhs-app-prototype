@@ -1,35 +1,36 @@
-{% set PROTOTYPEURL = "app/covid-status/status-service-v4" %}
+{% set PROTOTYPEURL = "your-health/covid-status" %}
 {% set serviceName = "NHS App" %}
-{% set recordActive = "active" %}
 {% set contentTitle = "Records" %}
-{% set title = contentTitle + " - " + serviceName %}
+{% set yourHealthActive = "active" %}
 {% block pageScripts %}
 <script>
 $("#dose2").click(function(){
  $(".dosediv2").toggleClass("show");
  $(".card-with-chevron-down-expanded").toggleClass("rotate");
+ $(".dose-number").toggleClass("show");
 });
 
 
 $("#dose1").click(function(){
  $(".dosediv1").toggleClass("show");
  $(".card-with-chevron-down-expanded-2").toggleClass("rotate");
+ $(".dose-number").toggleClass("show");
 });
 </script>
 {% endblock %}
 
 
 <!-- Extends the layout from /app/views/layouts/layout.html -->
-{% extends 'layouts/layout-app-new-covid-status.html' %}
+{% extends 'layouts/layout-covid-status.html' %}
 
-<!-- Set the page title inside this block -->
+
+<!-- Set the page title -->
 {% block pageTitle %}
-  {{ title }}
+  {{ contentTitle }} - {{ serviceName }}
 {% endblock %}
 
 <!-- Breadcrumb goes inside this block -->
 {% block beforeContent %}
-
 {% endblock %}
 
 {% block content %}
@@ -45,23 +46,25 @@ $("#dose1").click(function(){
           Go back</a>
       </div>
 
-      <h1 class="nhs-app-xl">{{ contentTitle }}</h1>
+      <h1 class="nhsuk-heading-xl nhsuk-u-margin-bottom-5">{{ contentTitle }}</h1>
 
-      {% if data['vaccinated_travel'] === 'True' %}
 
       <div class="nhsuk-card nhsuk-u-margin-bottom-0">
         <div class="nhsuk-card__content_less-padding-black">
           <a id="dose2" class="card-with-chevron-down-expanded nhsuk-link--no-visited-state-black link-block" href="javascript:void(0);" style="display: block;">
           <h3 class="nhsuk-card__heading nhsuk-heading-xs nhsuk-u-margin-bottom-1">Pfizer-BioNTech COVID-19 vaccine</h3>
         </a>
-          <p>Dose 2</p>
+          <p class="dose-number">Dose 2</p>
 
 
           <div class="dosediv2">
             <table class="nhsuk-table-covid">
-              <caption class="nhsuk-table__caption">Dose 2</caption>
 
               <tbody class="nhsuk-table__body">
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell"><strong>Dose</strong></td>
+                  <td class="nhsuk-table__cell ">2 of 2</td>
+                </tr>
                 <tr role="row" class="nhsuk-table__row">
                   <td class="nhsuk-table__cell"><strong>Manufacturer</strong></td>
                   <td class="nhsuk-table__cell ">Pfizer-BioNTech</td>
@@ -80,7 +83,7 @@ $("#dose1").click(function(){
                 </tr>
                 <tr role="row" class="nhsuk-table__row">
                   <td class="nhsuk-table__cell"><strong>Batch number</strong></td>
-                  <td class="nhsuk-table__cell ">AB43421</td>
+                  <td class="nhsuk-table__cell ">CBA76042</td>
                 </tr>
                 <tr role="row" class="nhsuk-table__row">
                   <td class="nhsuk-table__cell"><strong>Country of vaccination</strong></td>
@@ -100,7 +103,22 @@ $("#dose1").click(function(){
 
       <div class="nhsuk-card nhsuk-u-margin-bottom-4" style="border-top: none;">
         <div class="nhsuk-card__content_less-padding-black">
-          <p class="nhsuk-u-margin-bottom-0"><strong>Date of vaccination:</strong> 2 April 2021</p>
+          <p class="nhsuk-u-margin-bottom-0"><strong>Date of vaccination</strong> 6 April 2021</p>
+        </div>
+      </div>
+
+      <div class="nhsuk-card nhsuk-u-margin-bottom-0">
+        <div class="nhsuk-card__content_less-padding-black">
+          <a class="nhsuk-link--no-visited-state-black">
+            <h3 class="nhsuk-card__heading nhsuk-heading-xs nhsuk-u-margin-bottom-1">LFT test</h3>
+          </a>
+          <p>Negative test (COVID-19 not detected)</p>
+        </div>
+      </div>
+
+      <div class="nhsuk-card nhsuk-u-margin-bottom-4" style="border-top: none;">
+        <div class="nhsuk-card__content_less-padding-black">
+          <p class="nhsuk-u-margin-bottom-0"><strong>Tested:</strong> 10 February 2021 at 10:17am</p>
         </div>
       </div>
 
@@ -111,15 +129,18 @@ $("#dose1").click(function(){
           <a id="dose1" class="card-with-chevron-down-expanded-2 nhsuk-link--no-visited-state-black link-block" href="javascript:void(0);">
             <h3 class="nhsuk-card__heading nhsuk-heading-xs nhsuk-u-margin-bottom-1">Pfizer-BioNTech COVID-19 vaccine</h3>
         </a>
-          <p>Dose 1</p>
+        <p class="dose-number">Dose 1</p>
 
 
           <div class="dosediv1">
 
             <table class="nhsuk-table-covid">
-              <caption class="nhsuk-table__caption">Dose 1</caption>
 
               <tbody class="nhsuk-table__body">
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell"><strong>Dose</strong></td>
+                  <td class="nhsuk-table__cell ">1 of 2</td>
+                </tr>
                 <tr role="row" class="nhsuk-table__row">
                   <td class="nhsuk-table__cell"><strong>Manufacturer</strong></td>
                   <td class="nhsuk-table__cell ">Pfizer-BioNTech</td>
@@ -138,7 +159,7 @@ $("#dose1").click(function(){
                 </tr>
                 <tr role="row" class="nhsuk-table__row">
                   <td class="nhsuk-table__cell"><strong>Batch number</strong></td>
-                  <td class="nhsuk-table__cell ">AB12434</td>
+                  <td class="nhsuk-table__cell ">CBA54321</td>
                 </tr>
                 <tr role="row" class="nhsuk-table__row">
                   <td class="nhsuk-table__cell"><strong>Country of vaccination</strong></td>
@@ -156,29 +177,15 @@ $("#dose1").click(function(){
         </div>
       </div>
 
-      <div class="nhsuk-card nhsuk-u-margin-bottom-4" style="border-top: none;">
-        <div class="nhsuk-card__content_less-padding-black">
-          <p class="nhsuk-u-margin-bottom-0"><strong>Date of vaccination:</strong> 8 February 2021</p>
-        </div>
-      </div>
 
-      {% endif %}
-
-
-      <div class="nhsuk-card nhsuk-u-margin-bottom-0">
-        <div class="nhsuk-card__content_less-padding-black">
-          <a class="nhsuk-link--no-visited-state-black">
-            <h3 class="nhsuk-card__heading nhsuk-heading-xs nhsuk-u-margin-bottom-1">LFT test</h3>
-          </a>
-          <p>Negative test (COVID-19 not detected)</p>
-        </div>
-      </div>
 
       <div class="nhsuk-card nhsuk-u-margin-bottom-4" style="border-top: none;">
         <div class="nhsuk-card__content_less-padding-black">
-          <p class="nhsuk-u-margin-bottom-0"><strong>Tested:</strong> 10 February 2021 at midday</p>
+          <p class="nhsuk-u-margin-bottom-0"><strong>Date of vaccination</strong> 2 February 2021</p>
         </div>
       </div>
+
+
 
       <div class="nhsuk-card nhsuk-u-margin-bottom-0">
         <div class="nhsuk-card__content_less-padding-black">

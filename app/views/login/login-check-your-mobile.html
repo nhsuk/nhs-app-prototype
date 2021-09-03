@@ -1,0 +1,72 @@
+
+{% extends 'layouts/layout-nhslogin.html' %}
+
+{% set PROTOTYPEURL = "login" %}
+{% set serviceName = "NHS App" %}
+{% set contentTitle = "Check your mobile phone" %}
+{% set title = contentTitle + " - " + serviceName %}
+{% block pageScripts %}
+{% endblock %}
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1 class="nhsuk-heading-l">{{ contentTitle }}</h1>
+
+      <p>Enter the 6 digit security code we've sent to {% if (data['mobile']) %}{{ data['mobile']}}{% else %}*******1234{% endif %}.</p>
+
+      {{ details({
+        "text": "Not received your security code?",
+        "HTML": "
+        <p>If you do not get a code, you can <a href='/v3/login'>enter your email to try again</a>.</p>
+        "
+      }) }}
+
+      <form action="/start" method="post" class="form">
+
+        {{ input({
+          "label": {
+            "text": "Security code"
+          },
+          "hint": {
+            "text": "The code is 6 numbers"
+          },
+          "id": "security-code",
+          "name": "security-code"
+        }) }}
+
+        <div class="nhsuk-checkboxes nhsuk-u-margin-bottom-6">
+          <div class="nhsuk-checkboxes__item">
+            <input class="nhsuk-checkboxes__input" id="remember" name="remember" type="checkbox" value="remember">
+            <label class="nhsuk-label nhsuk-checkboxes__label" for="rememberremember">
+            Remember this device and stop sending security codes
+            </label>
+          </div>
+        </div>
+
+        {{ details({
+          "text": "What does remember this device mean?",
+          "HTML": "
+          <p>We can remember the device you are using now, so you won't need to enter a security code when you log in with this device in the future.</p>
+          <p>To keep your NHS login secure, you should only do this on your own personal or trusted devices.</p>
+          <p>We may ask if you still want us to remember this device in the future.</p>
+          "
+        }) }}
+
+        {{ details({
+          "text": "Do not have access to your mobile phone?",
+          "HTML": '
+          <p>If you do not have access to your phone, you can <a href="#">change your phone number securely</a>.</p>
+          '
+        }) }}
+        {{ button({
+          "text": "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

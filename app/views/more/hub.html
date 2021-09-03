@@ -30,7 +30,7 @@
 
 <nav class="nhsuk-breadcrumb nhsuk-breadcrumb-native" aria-label="Breadcrumb">
   <div class="nhsuk-width-container">
-    <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="/home">Back</a></p>
+    <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="javascript: window.history.go(-1)">Back</a></p>
   </div>
 </nav>
 {% endblock %}
@@ -71,7 +71,7 @@
 
                 </ul>
 
-                <form action="#" method="post" class="native-log-out">
+                <form action="/more/hub/log-out" method="post" class="native-log-out">
                   <button class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-top-5" type="submit">
                     Log out
                   </button>
