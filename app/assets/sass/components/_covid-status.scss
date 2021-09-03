@@ -14,8 +14,12 @@
   text-align: center;
 }
 
+.covid-brand {
+  text-align: center;
+}
+
 .covid-qr-image {
-    text-align: center;
+  text-align: center;
 }
 
 .center-align {
@@ -102,40 +106,29 @@
 
 .card-with-chevron-down-expanded {
   background-image: url(../images/icon_arrow_down.svg);
-  background-position: right 1em top 0.7em;
+  background-position: right 0em top -2px;
   background-repeat: no-repeat;
 }
 
 .card-with-chevron-down-expanded-2 {
   background-image: url(../images/icon_arrow_down.svg);
-  background-position: right 1em top 0.7em;
+  background-position: right 0em top -2px;
   background-repeat: no-repeat;
 }
 
-.card-with-chevron-down-expanded-3 {
-  background-image: url(../images/icon_arrow_down.svg);
-  background-position: right 1em top 0.7em;
-  background-repeat: no-repeat;
-}
 
 
 
 .card-with-chevron-down-expanded.rotate {
   background-image: url(../images/icon_arrow_up.svg);
-  background-position: right 1em top 0.7em;
+  background-position: right 0em top -2px;
   background-repeat: no-repeat;
 }
 
 
 .card-with-chevron-down-expanded-2.rotate {
   background-image: url(../images/icon_arrow_up.svg);
-  background-position: right 1em top 0.7em;
-  background-repeat: no-repeat;
-}
-
-.card-with-chevron-down-expanded-3.rotate {
-  background-image: url(../images/icon_arrow_up.svg);
-  background-position: right 1em top 0.7em;
+  background-position: right 0em top -2px;
   background-repeat: no-repeat;
 }
 
@@ -327,4 +320,59 @@ text-decoration: none;
 .nhsuk-card__content-extra-padding {
  padding: 42px;
  position: relative;
+}
+
+
+
+.nhs-app-summary-list-inline_covid-personal {
+
+  margin-bottom: nhsuk-spacing(3);
+
+  @include mq($until: tablet) {
+
+    .nhsuk-summary-list__row {
+      margin-bottom: 0;
+    }
+
+    .nhsuk-summary-list__key {
+
+      display: inline-block;
+      width: 42%;
+    }
+
+    .nhsuk-summary-list__value {
+
+      display: inline-block;
+      margin-bottom: nhsuk-spacing(1);
+      vertical-align: baseline;
+    }
+
+  }
+
+
+  @include mq($from: tablet) {
+
+    .nhsuk-summary-list__key {
+
+      width: 16%;
+    }
+
+    .nhsuk-summary-list__key, .nhsuk-summary-list__value {
+
+      padding-top: 0;
+      padding-bottom: nhsuk-spacing(1);
+
+    }
+
+  }
+
+
+
+}
+
+
+.white-bg {
+  background-color: #ffffff;
+  border-radius: 15px;
+  padding: 16px;
 }

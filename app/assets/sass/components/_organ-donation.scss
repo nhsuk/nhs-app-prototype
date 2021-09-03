@@ -20,23 +20,47 @@
 
 
 
-.nhs-app-panel-group {
+.nhsuk-panel {
+      padding: 24px;
 
-  @include mq($until: tablet) {
-
-    padding: 0 12px;
-
+}
 
    .nhsuk-panel-group__item {
 
-     padding: 0;
+
      flex: 0 0 50%;
-     padding: 0 4px;
+     padding-right: 1px;
      align-self: stretch;
-     margin-bottom: 0;
-   }
-  }
+     background-color: #ffffff;
+     width: 100%;
+     margin: -1px; 
+
 }
+
+
+@media (max-width: 40.0525em) {
+.nhs-app-panel-group {
+    padding: 0 12px;
+}
+}
+
+
+@media (max-width: 48.0525em) {
+.nhsuk-panel-group {
+    margin-bottom: 24px;
+
+}
+}
+
+.nhsuk-panel-group {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+
+
+}
+
+
 
 .nhs-app-organ-donation--no {
   color: $color_nhsuk-red;

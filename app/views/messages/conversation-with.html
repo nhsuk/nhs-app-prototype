@@ -10,6 +10,13 @@
 {% block pageScripts %}
 {% endblock %}
 
+{% set messageContent %}
+  {% if data['messageContent']  %}
+  {{ data['messageContent'] }}
+  {% else %}
+    Please can I order a prescription
+  {% endif %}
+{% endset %}
 
 
 
@@ -56,7 +63,7 @@
                 </div>
                 <div class="nhs-app-chat__container nhs-app-chat__container--reply">
                   <p class="nhs-app-chat__body">
-                    Please can you I order a prescription
+                   {{ messageContent }}
                   </p>
 
                 </div>

@@ -9,10 +9,16 @@
 }
 
 
-.nhsuk-header__container {
+.nhsuk-header__container-start {
     @media(max-width: 481px) {
       display: none;
     }
+}
+
+.nhsuk-header--transactional-app {
+  @media(max-width: 481px) {
+    display: none;
+  }
 }
 
 
