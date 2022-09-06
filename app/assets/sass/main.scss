@@ -258,36 +258,18 @@ display: flex;
 line-height:0.5em;
 }
 
-
-
-
 .nhsuk-section.app-homepage { margin-left:14vw; max-width:640px; }
-
-
-
-
 
 .nhs-number, .nhs-number:active {
 color:#fff;
 text-decoration: underline;
 }
 
-
-
-.nhs-number-copy
-{
-	display: none !important;
-	/* stylelint-disable-line declaration-no-important */
-	/* [1] */
-}
-
-
+.nhs-number-copy {	display: none !important; }
 
 .nhsuk-hero--image { min-height:230px; } 
 
-.hero-holder .patient-data {
-  bottom: 1em;
-  }
+.hero-holder .patient-data { bottom: 1em; }
   
 .nhsuk-section.app-homepage, .app-homepage {
   background-color:#f0f4f5 !important;
@@ -333,15 +315,12 @@ position: relative;
 @media (max-width: 40.0625em)
 {
 
+.nhsuk-details + h2,
+.nhsuk-details + .nhsuk-heading-l { padding-top: 24px; }
 
+.nhs-app-expander-group > .nhsuk-details { margin-bottom: 8px; }
 
-	.nhsuk-details + h2,
-	.nhsuk-details + .nhsuk-heading-l { padding-top: 24px; }
-	
-	.nhs-app-expander-group > .nhsuk-details { margin-bottom: 8px; }
-	
-	.nhs-app-expander-group { margin-bottom: 24px; }
-
+.nhs-app-expander-group { margin-bottom: 24px; }
 
 .app-homepage .nhsuk-section:nth-of-type(2) { padding-top: 2px; }
 
@@ -353,7 +332,6 @@ position: relative;
 		height: 100%;
 		max-height: 5vh;
 	}
-	
 	
 	
 .nhsuk-hero.nhsuk-hero--image { 
@@ -414,6 +392,7 @@ padding: 12px 40px;
 top: auto;
 }
 
+.nhsuk-main-wrapper.app-homepage { margin:0; padding:0; }
 
 .nhsuk-main-wrapper > *:first-child {
 padding-left: 4em;
@@ -479,3 +458,5 @@ background-image:none;
 
 
 }
+
+.nhsuk-main-wrapper>:first-child { margin:0; padding:0; }
