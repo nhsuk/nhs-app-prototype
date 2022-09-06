@@ -1,14 +1,22 @@
-{% extends 'layout.html' %}
+{% set PROTOTYPEURL = "home" %}
+{% set serviceName = "NHS App" %}
+{% set contentTitle = "Home" %}
+{% set title = contentTitle + " - " + serviceName %}
+{% block pageScripts %}
+{% endblock %}
+
+<!-- Extends the layout from /app/views/layouts/layout.html -->
+{% extends 'layouts/layout.html' %}
 
 <!-- some custom css for the home page only -->
 {% set containerClasses = 'app-width-container--full' %}
 {% set mainClasses = 'app-main-wrapper--no-padding app-homepage' %}
 
+<!-- Set the page title inside this block -->
 {% block pageTitle %}
   Home - NHS App
 {% endblock %}
-{% block pageScripts %}
-{% endblock %}
+
 
 
 {% block headCSS %}
@@ -28,17 +36,14 @@
         </svg>
       </a>
     </div>
-    
     <div class="nhsuk-header__content" id="content-header">
       <div class="nhsuk-header__menu">
         <button class="nhsuk-header__menu-toggle" id="toggle-menu" aria-controls="header-navigation" aria-expanded="false">Menu</button>
       </div>
     </div>
   </div>
-
 <!-- Primary navigation-->
-
-  <nav class="nhsuk-header__navigation" id="header-navigation" role="navigation" aria-label="Primary navigation" aria-labelledby="label-navigation">
+<nav class="nhsuk-header__navigation" id="header-navigation" role="navigation" aria-label="Primary navigation" aria-labelledby="label-navigation">
     <div class="nhsuk-width-container">
       <p class="nhsuk-header__navigation-title"><span id="label-navigation">Menu</span>
         <button class="nhsuk-header__navigation-close" id="close-menu">
