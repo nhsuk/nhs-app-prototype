@@ -1,5 +1,11 @@
 # NHS.UK prototype kit Changelog
 
+## 4.4.0 - 6th September 2022
+
+:new: **New features**
+
+- Update package dependencies to latest versions
+
 ## 4.3.0 - 16th March 2021
 
 :new: **New features**

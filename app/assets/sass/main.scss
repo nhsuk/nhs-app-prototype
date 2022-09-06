@@ -454,7 +454,12 @@ padding-top:1em;
 background-image:none;
  } 
 
-.nhsapp-links { margin-top:0; margin-left:1em; max-width: 640px;}
+.nhsapp-links { 
+margin-top:1em; margin-left:1em; margin-right: 1em;
+max-width: 640px;
+}
+
+.nhsapp-links .nhsuk-heading-s { font-size:1em; }
 
 
 }
