@@ -374,10 +374,14 @@ background-image:url('/images/app-homepage-hero.jpg');
  
 }
 
+
+
 @media (min-width: 48.0525em) {
 div.visually-hidden {
 display:none;
 }
+
+
 }
 
 
@@ -404,7 +408,6 @@ margin-top: 0;
 .nhsuk-hero--image {
 background-image:url('/images/app-homepage-hero.jpg');
  } 
-
 
 }
 
@@ -467,3 +470,5 @@ max-width: 620px;
 }
 
 .nhsuk-main-wrapper>:first-child { margin:0; padding:0; }
+
+
