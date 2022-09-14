@@ -76,127 +76,9 @@
 }
 
 
-.nhsapp-hero-content .nhsuk-header-l {
-font-size:2em;
-}
 
 
-@media (max-width: 40.0525em)
-{
-	.nhs-app-expander .nhsuk-details__summary { padding: 8px 8px 8px 0; }
 
-.nhsuk-card {
-border:0;
-}
-
-.nhsuk-card-group {
-margin-bottom:0px;
-}
-
-.nhsuk-card__content {
-padding:16px;
-}
-
-}
-
-
- .nhs-app-expander[open] .nhsuk-section__arrow:before, .nhsuk-section__arrow:after, .nhs-app-expander[open] .nhsuk-section__arrow:before
-{
-	border: solid 8px #0072CE;
-	content: "";
-	display: block;
-	height: 0;
-	position: absolute;
-	top: 44px;
-	left: 24px;
-	transform: rotate(45deg);
-	width: 0;
-	z-index:100;
-}
-
-.nhs-app-expander .nhsuk-details__summary:before
-{
-	display: none !important;
-	/* stylelint-disable-line declaration-no-important */
-	/* [1] */
-}
-
-.nhs-app-expander .nhsuk-details__summary:hover .nhsuk-details__summary-text { color: #ffffff; }
-.nhs-app-expander .nhsuk-details__summary:focus { box-shadow: none; }
-.nhs-app-expander .nhsuk-details__summary:focus .nhsuk-details__summary-text:before { background: transparent url("data:image/svg+xml,%3Csvg class='nhsuk-icon nhsuk-icon__plus' xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24' aria-hidden='true'%3E%3Ccircle cx='12' cy='12' r='10' fill='%23ffffff'%3E%3C/circle%3E%3Cpath fill='none' stroke='%230072CE' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M12 8v8M8 12h8'%3E%3C/path%3E%3C/svg%3E%0A") left -2px center no-repeat; }
-
-.nhs-app-expander .nhsuk-details__summary-text
-{
-	color: #ffffff;
-	cursor: pointer;
-	display: inline-block;
-	padding: 4px 4px 4px 16px;
-	position: relative;
-	text-decoration: none;
-	width: 100%;
-}
-
-.nhs-app-expander .nhsuk-details__summary-text:before
-{
-	background: transparent url("data:image/svg+xml,%3Csvg class='nhsuk-icon nhsuk-icon__plus' xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24' aria-hidden='true'%3E%3Ccircle cx='12' cy='12' r='10' fill='%23ffffff'%3E%3C/circle%3E%3Cpath fill='none' stroke='%230072CE' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M12 8v8M8 12h8'%3E%3C/path%3E%3C/svg%3E%0A") left -2px center no-repeat;
-	content: "";
-	display: inline-block;
-	height: 32px;
-	right: 30px;
-	position: absolute;
-	top: calc(50% - 16px);
-	width: 32px;
-}
-
-.nhs-app-expander .nhsuk-details__text
-{
-	padding-bottom: 10px;
-	padding-left: 16px;
-	padding-right: 16px;
-	padding-top: 10px;
-	border-left: 0;
-	margin-left: 0;
-	margin-top: 0;
-}
-
-@media (min-width: 40.0625em)
-{
-	.nhs-app-expander .nhsuk-details__text { padding-bottom: 24px; }
-	.nhs-app-expander .nhsuk-details__text { padding-left: 24px; }
-	.nhs-app-expander .nhsuk-details__text { padding-right: 24px; }
-	.nhs-app-expander .nhsuk-details__text { padding-top: 0; }
-}
-
-.nhs-app-expander[open] { border-bottom-width: 1px; }
-.nhs-app-expander[open] .nhsuk-details__summary:focus:hover .nhsuk-details__summary-text { text-decoration: none; }
-
-.nhs-app-expander[open] .nhsuk-details__summary:focus .nhsuk-details__summary-text::before
-{
-	background: transparent url("data:image/svg+xml,%3Csvg class='nhsuk-icon nhsuk-icon__minus' xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24' aria-hidden='true'%3E%3Ccircle cx='12' cy='12' r='10' fill='white'%3E%3C/circle%3E%3Cpath fill='none' stroke='%230072CE' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M8 12h8'%3E%3C/path%3E%3C/svg%3E%0A") left -2px center no-repeat;
-	/* [3] */
-}
-
-.nhs-app-expander[open] .nhsuk-details__summary-text::before
-{
-	background: transparent url("data:image/svg+xml,%3Csvg class='nhsuk-icon nhsuk-icon__minus' xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24' aria-hidden='true'%3E%3Ccircle cx='12' cy='12' r='10' fill='white'%3E%3C/circle%3E%3Cpath fill='none' stroke='%230072CE' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M8 12h8'%3E%3C/path%3E%3C/svg%3E%0A") left -2px center no-repeat;
-	/* [3] */
-}
-
-.nhs-app-expander-group
-{
-	/* [4] */
-	margin-bottom: 0px;
-}
-
-.nhs-app-expander-group > .nhsuk-details { margin-bottom: 0px; }
-
-.nhs-app-expander-group > .nhsuk-details__text
-{
-	border: 0;
-	padding-left: 0;
-}
-
-.nhsuk-details.nhs-app-expander { margin-bottom: 0; }
 
 .nhsuk-details + h2, .nhsuk-details + .nhsuk-heading-l { padding-top: 16px; }
 
@@ -217,49 +99,6 @@ padding:16px;
  */
 
 
-
-
-.app-section-odd
-{
-	background: #f0f4f5;
-	margin-top: 0;
-	margin-bottom: 0;
-}
-
-.nhsapp-account-link, .nhsapp-account-link:visited, .nhsapp-account-link:hover
-{
-	margin-right: .6em;
-	color: #fff;
-	font-size: 1em;
-	line-height:0.5em;
-}
-
-span.nhsapp-account-text {	
-align-items: center;
-justify-content: center;
-display:flex;
-}
-
-.nhsapp-account-icon
-{
-	fill: #fff;
-	height: 1.6em;
-	margin-left: .4em;
-	position: relative;
-	width: auto;
-}
-
-.nhsapp-account
-{
-	float: right;
-	margin-right: -1em;
-	position: relative;
-display: flex;
-line-height:0.5em;
-}
-
-.nhsuk-section.app-homepage { margin-left:14vw; max-width:640px; }
-
 .nhs-number, .nhs-number:active {
 color:#fff;
 text-decoration: underline;
@@ -267,9 +106,6 @@ text-decoration: underline;
 
 .nhs-number-copy {	display: none !important; }
 
-.nhsuk-hero--image { min-height:230px; } 
-
-.hero-holder .patient-data { bottom: 1em; }
   
 .nhsuk-section.app-homepage, .app-homepage {
   background-color:#f0f4f5 !important;
@@ -280,33 +116,22 @@ float:right; top:1.5em; right:2em;
 }
 
 
-.hero-holder { 
-background-color:rgb(0, 94, 184); display:block; 
-bottom: -24px;
-max-width: 35em;
-padding: 2em 2em 1em 2em;
-position: relative;
 
-}
 
-.nhsuk-hero__arrow:after, .nhsuk-hero__arrow:before
-{
-	border: solid 8px #005eb8;
-	content: "";
-	display: block;
-	height: 0;
-	position: absolute;
-	top: 95%;
-	left: 24px;
-	transform: rotate(45deg);
-	width: 0;
-	z-index:100;
+@media (min-width: 48.0525em) {
+		div.visually-hidden {
+		display:none;
+		}
 }
 
 
-.spacer-bar { height:20px; background:#F0F4F5; display:block; }
+		.nhsuk-hero.nhsuk-hero--image { 
+		background-image:url('/images/app-homepage-hero.jpg');
+		min-height: 240px;
+		margin-bottom: 2em;
+		text-align: left !important;
 
-.button-pad { margin:20px; }
+		 }	
 
 
 
@@ -315,100 +140,32 @@ position: relative;
 @media (max-width: 40.0625em)
 {
 
-.nhsuk-details + h2,
-.nhsuk-details + .nhsuk-heading-l { padding-top: 24px; }
+		.nhsuk-details + h2,
+		.nhsuk-details + .nhsuk-heading-l { padding-top: 24px; }
 
-.nhs-app-expander-group > .nhsuk-details { margin-bottom: 8px; }
+		.nhs-app-expander-group > .nhsuk-details { margin-bottom: 8px; }
 
-.nhs-app-expander-group { margin-bottom: 24px; }
+		.nhs-app-expander-group { margin-bottom: 24px; }
 
-.app-homepage .nhsuk-section:nth-of-type(2) { padding-top: 2px; }
-
-.nhsapp-links { margin-left:2em; max-width: 88%;}
-
-	.nhsapp-logo
-	{
-		width: auto;
-		height: 100%;
-		max-height: 5vh;
-	}
-	
-	
-.nhsuk-hero.nhsuk-hero--image { 
-text-align: center;
-min-height: 240px;
-margin-bottom: 2em;
-
- }	
-
-.hero-holder { 
-min-height:180px; 
-padding-top:2em; 
-bottom:-22px;
-margin-top:0; 
-max-width:510px; 
-margin-left:auto; margin-right:auto; 
-padding-left:1em;
-text-align:left;
-}
+		.app-homepage .nhsuk-section:nth-of-type(2) { padding-top: 2px; }
 
 
-.nhs-app-menu.beta-icon__chevron-right-circle {
-    display: flex;
-    fill: #007F3B;
-    position: absolute;
-    right: 24px;
-    top: 50%;
-}
 
-h2.nhsuk-card__heading.nhsuk-heading-s {
-line-height:1em;
-margin-bottom:8px;
-}
+		h2.nhsuk-card__heading.nhsuk-heading-s {
+		line-height:1em;
+		margin-bottom:8px;
+		}
 
-.nhsapp-links { margin-top:1em; margin-left:3em; max-width: 480px;}
 
-.nhsuk-hero--image {
-background-image:url('/images/app-homepage-hero.jpg');
- } 
  
 }
 
 
 
-@media (min-width: 48.0525em) {
-div.visually-hidden {
-display:none;
-}
-
-.hero-holder {
-margin: 0 16em;
-text-align:left;
-
-}
-
-
-.nhsapp-links {
-margin: 1em 50%;
-max-width: 640px;
-}
-
-
-}
-
 
 @media (min-width: 40.0625em)
 {
 
-.nhsuk-hero { text-align:center; }
-
-.hero-holder {
-margin: 0 9em;
-text-align:left;
-max-width: 35em;
-padding: 12px 40px;
-top: auto;
-}
 
 .nhsuk-main-wrapper.app-homepage { margin:0; padding:0; }
 
@@ -417,7 +174,6 @@ padding-left: 4em;
 margin-top: 0;
 
 }
-.nhsapp-links { margin-top:1em; margin-left:13em; max-width: 640px;}
 
 .nhsuk-hero--image {
 background-image:url('/images/app-homepage-hero.jpg');
@@ -428,8 +184,6 @@ background-image:url('/images/app-homepage-hero.jpg');
 /* settings for small device */
 
 @media (max-width: 26.3125em) {
-.nhs-app-menu.beta-icon__chevron-right-circle {
-display:none;
 }
 
 .nhsuk-header__navigation-list > :last-child {
@@ -437,24 +191,36 @@ border-bottom: 1px solid #f0f4f5;
 }
 
 
+.nhsuk-hero--image-description .nhsuk-hero-content {
+margin: 0 -1em;
+padding: 1em;
+position: relative;
+top: 0px;
+text-align:left;
+}
+
+
+
+
+.nhsuk-hero--image .nhsuk-hero__overlay {
+min-height:140px;
+}
+
 .nhsuk-hero.nhsuk-hero--image { 
-text-align: center;
+text-align:left;
 min-height: 120px;
 margin-bottom: 1em;
 padding-bottom:0;
-
  }
  
-.nhsapp-hero-content .nhsuk-header-l {
-margin-bottom:1em;
-font-size:24px;
+h1, .nhsuk-heading-xl {
+font-size: 1.8rem;
 }
 
 .hero-holder { 
 padding-top:0; 
 padding-bottom: 10px;
 margin:-2.6em 0 0 0; 
-background-color:rgb(0, 94, 184);
 min-height:120px;
 }
 
@@ -464,25 +230,28 @@ min-height:120px;
 
 .app-main-wrapper--no-padding.app-homepage .nhsuk-section.app-homepage {
 margin-left:1em;
-padding-top:1em;
 }
 
 .nhsuk-hero--image {
 background-image:none;
+text-align: left;
  } 
-
-.nhsapp-links { 
-margin-top:1.6em; margin-left:1em; margin-right: 1em;
-max-width: 620px;
-}
 
 .nhsapp-links .nhsuk-heading-s { font-size:1em; }
 
 .nhsuk-header__menu-toggle {padding:6px; }
 
+  .app-homepage .nhsuk-section:nth-of-type(2) {
+    margin-top: -50px !important;
+  }
 
-}
+
+
+
 
 .nhsuk-main-wrapper>:first-child { margin:0; padding:0; }
 
+.nhsuk-hero.nhsuk-hero--image {
+text-align: left !important;
+ } 
 
