@@ -1,0 +1,155 @@
+{% set PROTOTYPEURL = "your-health/gp-record" %}
+{% set serviceName = "NHS App" %}
+{% set contentTitle = "Test Result" %}
+{% set yourHealthActive = "active" %}
+{% block pageScripts %}
+{% endblock %}
+
+<!-- Extends the layout from /app/views/layouts/layout.html -->
+{% extends 'layouts/layout.html' %}
+
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  {{ contentTitle }} - {{ serviceName }}
+{% endblock %}
+
+
+
+
+<!-- Breadcrumb goes inside this block -->
+{% block beforeContent %}
+<nav class="nhsuk-breadcrumb nhsuk-breadcrumb-desktop" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <ol class="nhsuk-breadcrumb__list">
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/home">Home</a></li>
+    </ol>
+    <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="/home">Back to home</a></p>
+  </div>
+</nav>
+
+<nav class="nhsuk-breadcrumb nhsuk-breadcrumb-native" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="javascript: window.history.go(-1)">Back</a></p>
+  </div>
+</nav>
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1 class="nhsuk-heading-xl nhsuk-u-margin-bottom-5">{{ contentTitle }}</h1>
+
+      <h2>Summary</h2>
+
+      <div class="nhsuk-card nhsuk-card-dark-background nhsuk-u-margin-bottom-5">
+        <div class="nhsuk-card__content">
+          <h3 class="nhsuk-card__heading nhsuk-heading-xs nhsuk-u-margin-bottom-1">
+            Test type
+          </h3>
+          <p>Full blood count</p>
+
+          <hr>
+
+          <h3 class="nhsuk-card__heading nhsuk-heading-xs nhsuk-u-margin-bottom-1">
+            Test filed
+          </h3>
+          <p>12 April 2023</p>
+
+
+          <hr>
+          <h3 class="nhsuk-card__heading nhsuk-heading-xs nhsuk-u-margin-bottom-1">
+            Viewed by healthcare professional
+          </h3>
+          <p>Yes</p>
+
+          <hr>
+          <h3 class="nhsuk-card__heading nhsuk-heading-xs nhsuk-u-margin-bottom-1">
+            Your healthcare professional comments
+          </h3>
+          <p>Abnormal - but expected. Patient must keep appointment routine.</p>
+
+          <hr>
+          
+        </div>
+
+      </div>
+
+      <h2>Result</h2>
+
+      <div class="nhsuk-card nhsuk-card-dark-background nhsuk-u-margin-bottom-5">
+        <div class="nhsuk-card__content">
+          <h3 class="nhsuk-card__heading nhsuk-heading-xs nhsuk-u-margin-bottom-0">
+            Haemoglobin estimation: <span style="float:right;">146 g/L</span>
+          </h3>
+          <hr class="nhsuk-u-margin-top-2 nhsuk-u-margin-bottom-2">
+
+          <p class="nhsuk-u-margin-bottom-0">Normal range: <span style="float:right;">135 - 180</span></p>
+
+          <hr class="nhsuk-u-margin-top-2 nhsuk-u-margin-bottom-5">
+
+          <details class="nhsuk-details nhsuk-u-margin-bottom-3">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">
+                View details
+              </span>
+            </summary>
+            <div class="nhsuk-details__text">
+
+              <div class="nhsuk-u-margin-bottom-0" style="width:100px; margin-left:25%; text-align:center; background-color: white;">
+                <span class="nhsuk-body-s nhsuk-u-margin-bottom-1">Your result</span>
+                <span class="nhsuk-u-font-weight-bold">146 g/L</span><br>
+                <span class="nhsuk-u-font-weight-bold"><img src="/images/downward-arrow.png" alt="indicator" width="30" height="30"></span>
+               
+              </div>
+
+              <div class="nhsuk-test-result-bar nhsuk-u-margin-bottom-9 nhsuk-u-margin-top-0">
+                <div style="width:60%; height:30px; margin-left:20%; background-color: orange;">
+                  <div class="nhsuk-result-normal-limits" style="width:60%; margin-left:15%;"><div style="height:30px;  background-color: green;"></div>
+                    <div style="margin-top:20px;">
+                      <span>135</span>
+                      <span style="float:right;">180</span>
+                    </div>
+                  </div> 
+                </div>
+              </div>
+            
+              <p><a href="/your-health/gp-record/result-tracking">Result history</a></p>
+          
+            </div>
+          </details>
+        </div>
+      </div>
+
+
+
+      <div class="nhsuk-card nhsuk-card-dark-background nhsuk-u-margin-bottom-5">
+        <div class="nhsuk-card__content">
+          <h3 class="nhsuk-card__heading nhsuk-heading-xs nhsuk-u-margin-bottom-0">
+            Total white cell count: <span style="float:right;">8.84 10*9/L</span>
+          </h3>
+          <hr class="nhsuk-u-margin-top-2 nhsuk-u-margin-bottom-2">
+
+          <p class="nhsuk-u-margin-bottom-0">Normal range: <span style="float:right;">4.00 - 11.00</span></p>
+
+          <hr class="nhsuk-u-margin-top-2 nhsuk-u-margin-bottom-5">
+
+          <details class="nhsuk-details nhsuk-u-margin-bottom-3">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">
+                View details
+              </span>
+            </summary>
+            <div class="nhsuk-details__text">
+
+          
+            </div>
+          </details>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+{% endblock %}

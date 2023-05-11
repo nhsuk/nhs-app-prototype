@@ -1,0 +1,176 @@
+{% set PROTOTYPEURL = "your-health/gp-record" %}
+{% set serviceName = "NHS App" %}
+{% set contentTitle = "Result Tracking" %}
+{% set yourHealthActive = "active" %}
+{% block pageScripts %}
+<script>
+  const xNormalArray = [2019,2020,2021,2022,2023];
+  const yNormalArray = [140,160,150,140, 146];
+
+  const xArray2 = [2017, 2018];
+  const yArray2 = [135, 130];
+  
+  // Define Data
+  const data = [{
+    x:xNormalArray,
+    y:yNormalArray,
+    mode:"markers",
+    marker: {
+    color: 'green',
+    size: 15
+  },
+  name: 'Normal'},
+  {
+    x:xArray2,
+    y:yArray2,
+    mode:"markers",
+    marker: {
+    color: 'orange',
+    size: 15
+  },
+  name: 'Below Normal'}];
+  
+  // Define Layout
+  const layout = {
+    xaxis: {range: [2017, 2023], title: "Years"},
+    yaxis: {range: [110, 200], title: "Haemoglobin estimation (g/L)"},  
+    title: "",
+    legend:{
+    x: 1.3,
+    xanchor: 'right',
+    y: 1,
+    traceorder: 'normal',
+    font: {
+      family: 'sans-serif',
+      size: 12,
+      color: '#000'
+    },
+    bgcolor: '#E2E2E2',
+    bordercolor: '#FFFFFF',
+    borderwidth: 2
+  }
+  };
+
+  var config = {responsive: true, displayModeBar: false};
+  
+  // Display using Plotly
+  Plotly.newPlot("myPlot", data, layout, config);
+  </script>
+{% endblock %}
+
+<!-- Extends the layout from /app/views/layouts/layout.html -->
+{% extends 'layouts/layout.html' %}
+
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  {{ contentTitle }} - {{ serviceName }}
+{% endblock %}
+
+
+
+
+<!-- Breadcrumb goes inside this block -->
+{% block beforeContent %}
+<nav class="nhsuk-breadcrumb nhsuk-breadcrumb-desktop" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <ol class="nhsuk-breadcrumb__list">
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/home">Home</a></li>
+    </ol>
+    <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="/home">Back to home</a></p>
+  </div>
+</nav>
+
+<nav class="nhsuk-breadcrumb nhsuk-breadcrumb-native" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="javascript: window.history.go(-1)">Back</a></p>
+  </div>
+</nav>
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1 class="nhsuk-heading-xl nhsuk-u-margin-bottom-5">{{ contentTitle }}</h1>
+
+      <h2>Monitor test trends</h2>
+
+      <div class="nhsuk-card nhsuk-card-dark-background nhsuk-u-margin-bottom-3">
+        <div class="nhsuk-card__content">
+          <h3 class="nhsuk-card__heading nhsuk-heading-xs nhsuk-u-margin-bottom-0">
+            Test type
+          </h3>
+          <p>Full blood count</p>
+
+          <hr>
+
+          <h3 class="nhsuk-card__heading nhsuk-heading-xs nhsuk-u-margin-bottom-0">
+            Measuring
+          </h3>
+          <p>Haemoglobin estimation</p>
+
+
+          <hr class="nhsuk-u-margin-bottom-0">
+
+          <div class="nhsuk-body" id="myPlot"></div>
+
+          <p>This graph shows your haemoglobin estimation from 2017 to 2023.</p>
+
+          <p>The normal range is between 135 -180 g/L</p>
+        
+          <ul class="nhsuk-body">
+              <li>Your 2017 haemoglobin estimation was 135 g/L - below normal range</li>
+              <li>Your 2018 haemoglobin estimation was 130 g/L - below normal range</li>
+              <li>Your 2019 haemoglobin estimation was 140 g/L - within normal range</li>
+              <li>Your 2020 haemoglobin estimation was 150 g/L - within normal range</li>
+              <li>Your 2021 haemoglobin estimation was 160 g/L - within normal range</li>
+              <li>Your 2022 haemoglobin estimation was 150 g/L - within normal range</li>
+              <li>Your 2023 haemoglobin estimation was 146 g/L - within normal range</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+   
+
+
+  </div>
+
+  <section class="nhsuk-section">
+    <div class="nhsuk-width-container">
+    <div class="nhsuk-grid-row nhsuk-u-margin-bottom-8">
+        <ul class="panel-link nhsuk-u-margin-top-5">
+          <li class="panel-link__item">
+            <a class="panel-link__link" href="/your-health/data-opt-out/overview">
+            <h2 class="panel-link__heading nhsuk-heading-s">Learn more about test results</h2>
+            </a>
+           </li>
+        </ul>
+      
+        <p>You may see medical abbreviations you are not familiar with.</p>
+
+        <div class="nhsuk-action-link">
+          <a class="nhsuk-action-link__link" href="https://www.nhs.uk/using-the-nhs/nhs-services/the-nhs-app/abbreviations/">
+            <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+            </svg>
+            <span class="nhsuk-action-link__text">Help with abbreviations</span>
+          </a>
+        </div>
+
+        
+      </div>
+
+       
+      </div>
+      </section>
+
+
+{% endblock %}
+

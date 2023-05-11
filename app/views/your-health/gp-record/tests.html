@@ -1,0 +1,117 @@
+{% set PROTOTYPEURL = "your-health/gp-record" %}
+{% set serviceName = "NHS App" %}
+{% set contentTitle = "My Test Results" %}
+{% set yourHealthActive = "active" %}
+{% block pageScripts %}
+<script>
+
+  var testType = "";
+  var testResults = [];
+
+fetch('https://645b796ba8f9e4d6e7698d85.mockapi.io/nhs/patients/1', {
+    method: 'GET',
+    headers: {
+        'Accept': 'application/json',
+    },
+})
+   .then((response) => response.json())
+   .then((data) => {
+    
+    console.log(JSON.stringify(data));
+    console.log(data.tests.length);
+
+    for (i = 0; i < data.tests.length; i++) {
+
+      for (j = 0; j < data.tests[i].testResults.length; j++) {
+        testType = data.tests[i].testResults[j];
+        console.log(testType);
+
+      }
+
+
+    testResults.push({testResultsData: data.tests[i]});
+
+    }
+
+    console.log(testResults);
+  
+  })
+
+
+</script>
+{% endblock %}
+
+<!-- Extends the layout from /app/views/layouts/layout.html -->
+{% extends 'layouts/layout.html' %}
+
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  {{ contentTitle }} - {{ serviceName }}
+{% endblock %}
+
+
+
+
+<!-- Breadcrumb goes inside this block -->
+{% block beforeContent %}
+<nav class="nhsuk-breadcrumb nhsuk-breadcrumb-desktop" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <ol class="nhsuk-breadcrumb__list">
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/home">Home</a></li>
+    </ol>
+    <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="/home">Back to home</a></p>
+  </div>
+</nav>
+
+<nav class="nhsuk-breadcrumb nhsuk-breadcrumb-native" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="javascript: window.history.go(-1)">Back</a></p>
+  </div>
+</nav>
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1 class="nhsuk-heading-xl nhsuk-u-margin-bottom-5">{{ contentTitle }}</h1>
+
+      <div class="nhsuk-card nhsuk-card-dark-background nhsuk-u-margin-bottom-2">
+        <div class="nhsuk-card__content">
+          <h3 class="nhsuk-card__heading nhsuk-heading-xs nhsuk-u-margin-bottom-1">
+            12 April 2023
+          </h3>
+
+          <p><a href="/your-health/gp-record/result">Full blood count</a></p>
+        </div>
+      </div>
+
+      <div class="nhsuk-card nhsuk-card-dark-background nhsuk-u-margin-bottom-2">
+        <div class="nhsuk-card__content">
+          <h3 class="nhsuk-card__heading nhsuk-heading-xs nhsuk-u-margin-bottom-1">
+            22 March 2022
+          </h3>
+
+          <p><a href="#">Full blood count</a></p>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+  <section class="nhsuk-section">
+    <div class="nhsuk-width-container">
+    <div class="nhsuk-grid-row nhsuk-u-margin-bottom-8">
+        <ul class="panel-link nhsuk-u-margin-top-5">
+          <li class="panel-link__item">
+            <a class="panel-link__link" href="/your-health/gp-record/tests-older">
+            <h2 class="panel-link__heading nhsuk-heading-s">View older test results</h2>
+            </a>
+           </li>
+        </ul>
+    </div>
+    </div></section>
+
+{% endblock %}
