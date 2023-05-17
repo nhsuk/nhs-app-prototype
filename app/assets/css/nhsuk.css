@@ -712,3 +712,24 @@ main .app-list-signage a[href=""]:focus {
 main .app-list-signage a[href=""] {
   color: #ffffff;
 }
+
+/* Serag BJSS Additons */
+
+
+.nhsuk-test-result-bar {
+  height:30px;
+  background-color: red;
+  border-radius: 6px;
+}
+
+.nhsuk-test-result-bar-2 {
+  height:30px;
+  background-color: orange;
+  border-radius: 6px;
+}
+
+.nhsuk-result-normal-limits {
+  border-left: 3px solid black;
+  border-right: 3px solid black;
+  height: 50px;
+}
