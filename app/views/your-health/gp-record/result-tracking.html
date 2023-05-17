@@ -9,6 +9,9 @@
 
   const xArray2 = [2017, 2018];
   const yArray2 = [135, 130];
+
+  const xAllTests = xArray2.concat(xNormalArray);
+  const yAllTests = yArray2.concat(yNormalArray);
   
   // Define Data
   const data = [{
@@ -28,13 +31,25 @@
     color: 'orange',
     size: 15
   },
-  name: 'Below Normal'}];
+  name: 'Abnormal'},
+  {
+    x:xAllTests,
+    y:yAllTests,
+    mode:"lines",
+    hoverinfo:'none',
+    showlegend: false,
+    marker: {
+    color: 'grey',
+    size: 15
+  },
+  name: 'Progress'}];
   
   // Define Layout
   const layout = {
     xaxis: {range: [2017, 2023], title: "Years"},
     yaxis: {range: [110, 200], title: "Haemoglobin estimation (g/L)"},  
     title: "",
+    showlegend: true,
     legend:{
     x: 1.3,
     xanchor: 'right',
