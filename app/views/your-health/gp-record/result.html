@@ -3,6 +3,71 @@
 {% set contentTitle = "Test Result" %}
 {% set yourHealthActive = "active" %}
 {% block pageScripts %}
+
+<script>
+
+  var testType = "";
+  var testResultsJson = [];
+
+fetch('https://645b796ba8f9e4d6e7698d85.mockapi.io/nhs/EMIS', {
+    method: 'GET',
+    headers: {
+        'Accept': 'application/json',
+    },
+})
+   .then((response) => response.json())
+   .then((data) => {
+    
+    console.log(JSON.stringify(data));
+    console.log(data[0].MedicalRecord.TestResults.length);
+
+    for (i = 0; i < data[0].MedicalRecord.TestResults.length; i++) {
+
+   
+        testType = data[0].MedicalRecord.TestResults[i];
+        console.log("value: ", testType);
+
+        let testChildValues = data[0].MedicalRecord.TestResults[i].ChildValues;
+        if(testChildValues !== null ) {
+
+          for (j = 0; j < data[0].MedicalRecord.TestResults[i].ChildValues.length; j++) {
+          console.log("child values: ", data[0].MedicalRecord.TestResults[i].ChildValues);
+          testResultsJson.push({
+            testResultsData: data[0].MedicalRecord.TestResults[i].ChildValues[j], 
+            testName: data[0].MedicalRecord.TestResults[i].ChildValues[j].Term,
+            testValue: data[0].MedicalRecord.TestResults[i].ChildValues[j].NumericValue,
+            testUnits: data[0].MedicalRecord.TestResults[i].ChildValues[j].NumericUnits,
+            testRanges: data[0].MedicalRecord.TestResults[i].ChildValues[j].Range
+          });
+          }
+        
+        }
+
+    }
+
+
+    console.log("json result: ", testResultsJson);
+
+    document.getElementById("patientTestName").innerHTML = testResultsJson[0].testName + ": <span id='patientTestValue' style='float:right;'>"+ testResultsJson[0].testValue + " " + testResultsJson[0].testUnits +"</span>";
+    document.getElementById("testRange").innerHTML = testResultsJson[0].testRanges.Minimum + " - " + testResultsJson[0].testRanges.Maximum;
+    document.getElementById("indicatorResult").innerHTML = testResultsJson[0].testValue + " " + testResultsJson[0].testUnits;
+    document.getElementById("indicatorResult2").innerHTML = testResultsJson[0].testValue + " " + testResultsJson[0].testUnits;
+    document.getElementById("indicatorResult3").innerHTML = testResultsJson[0].testValue + " " + testResultsJson[0].testUnits;
+
+    if( testResultsJson[0].testValue >= 135 && testResultsJson[0].testValue <= 180) {
+       percentageResult = ((testResultsJson[0].testValue - 135) / 45 ) * 100;
+
+       document.getElementById("divIndicatorResult").style.marginLeft = percentageResult + '%';
+       document.getElementById("divIndicatorResult2").style.marginLeft = percentageResult + '%';
+       document.getElementById("divIndicatorResult3").style.marginLeft = percentageResult + '%';
+       
+    }
+
+  })
+
+
+</script>
+
 {% endblock %}
 
 <!-- Extends the layout from /app/views/layouts/layout.html -->
@@ -80,12 +145,14 @@
 
       <div class="nhsuk-card nhsuk-card-dark-background nhsuk-u-margin-bottom-5">
         <div class="nhsuk-card__content">
-          <h3 class="nhsuk-card__heading nhsuk-heading-xs nhsuk-u-margin-bottom-0">
-            Haemoglobin estimation: <span style="float:right;">146 g/L</span>
-          </h3>
+          <div class="nhsuk-u-margin-bottom-0">
+          <h3 id="patientTestName" class="nhsuk-card__heading nhsuk-heading-xs" >
+          </h3>         
+          </div>
+
           <hr class="nhsuk-u-margin-top-2 nhsuk-u-margin-bottom-2">
 
-          <p class="nhsuk-u-margin-bottom-0">Normal range: <span style="float:right;">135 - 180</span></p>
+          <p class="nhsuk-u-margin-bottom-0">Normal range: <span id="testRange" style="float:right;"></span></p>
 
           <hr class="nhsuk-u-margin-top-2 nhsuk-u-margin-bottom-5">
 
@@ -97,29 +164,36 @@
             </summary>
             <div class="nhsuk-details__text">
 
-              <div class="nhsuk-u-margin-bottom-0" style="width:100px; margin-left:25%; text-align:center; background-color: white;">
+              <div>
+              <div class="nhsuk-u-margin-bottom-0" style="width:35%; margin-left:13%; height:80px; ">
+                <div id="divIndicatorResult" style="width:100px; text-align: center;">
                 <span class="nhsuk-body-s nhsuk-u-margin-bottom-1">Your result</span>
-                <span class="nhsuk-u-font-weight-bold">146 g/L</span><br>
+                <span id="indicatorResult" class="nhsuk-u-font-weight-bold">146 g/L</span><br>
                 <span class="nhsuk-u-font-weight-bold"><img src="/images/downward-arrow.png" alt="indicator" width="30" height="30"></span>
               </div>
+            </div>
 
               <div class="nhsuk-test-result-bar nhsuk-u-margin-bottom-9 nhsuk-u-margin-top-0">
                 <div style="width:60%; height:30px; margin-left:20%; background-color: orange;">
-                  <div class="nhsuk-result-normal-limits" style="width:60%; margin-left:15%;"><div style="height:30px;  background-color: green;"></div>
+                  <div class="nhsuk-result-normal-limits" style="width:60%; margin-left:15%;">
+                    
+                    <div style="height:30px;  background-color: green;"></div>
                     <div style="margin-top:20px;">
                       <span>135</span>
                       <span style="float:right;">180</span>
                     </div>
                   </div> 
                 </div>
-              </div>
+              </div></div>
 
 
-              <div class="nhsuk-u-margin-bottom-0" style="width:100px; margin-left:25%; text-align:center; background-color: white;">
+              <div class="nhsuk-u-margin-bottom-0" style="width:61%; margin-left:3%; height:80px; ">
+                <div id="divIndicatorResult2" style="width:100px; text-align: center;">
                 <span class="nhsuk-body-s nhsuk-u-margin-bottom-1">Your result</span>
-                <span class="nhsuk-u-font-weight-bold">146 g/L</span><br>
+                <span id="indicatorResult2" class="nhsuk-u-font-weight-bold">146 g/L</span><br>
                 <span class="nhsuk-u-font-weight-bold"><img src="/images/downward-arrow.png" alt="indicator" width="30" height="30"></span>
               </div>
+            </div>
 
               <div class="nhsuk-test-result-bar-2 nhsuk-u-margin-bottom-9 nhsuk-u-margin-top-0">
                 <div class="nhsuk-result-normal-limits" style="width:60%; margin-left:20%;"><div style="height:30px;  background-color: green;"></div>
@@ -131,11 +205,13 @@
             </div>
 
 
-            <div class="nhsuk-u-margin-bottom-0" style="width:100px; margin-left:10%; text-align:center; background-color: white;">
+            <div class="nhsuk-u-margin-bottom-0" style="width:99%; margin-left:-35px; height:80px; ">
+              <div id="divIndicatorResult3" style="width:80px; text-align: center;">
               <span class="nhsuk-body-s nhsuk-u-margin-bottom-1">Your result</span>
-              <span class="nhsuk-u-font-weight-bold">146 g/L</span><br>
+              <span id="indicatorResult3" class="nhsuk-u-font-weight-bold">146 g/L</span><br>
               <span class="nhsuk-u-font-weight-bold"><img src="/images/downward-arrow.png" alt="indicator" width="30" height="30"></span>
             </div>
+          </div>
 
               <div class="nhsuk-result-normal-limits nhsuk-u-margin-bottom-9" style="width:100%;"><div style="height:30px;  background-color: green;"></div>
                 <div style="margin-top:20px;">
