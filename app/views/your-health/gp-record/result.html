@@ -37,14 +37,14 @@ fetch('https://645b796ba8f9e4d6e7698d85.mockapi.io/nhs/EMIS', {
             testName: data[0].MedicalRecord.TestResults[i].ChildValues[j].Term,
             testValue: data[0].MedicalRecord.TestResults[i].ChildValues[j].NumericValue,
             testUnits: data[0].MedicalRecord.TestResults[i].ChildValues[j].NumericUnits,
-            testRanges: data[0].MedicalRecord.TestResults[i].ChildValues[j].Range
+            testRanges: data[0].MedicalRecord.TestResults[i].ChildValues[j].Range,
+            testAbnormal: data[0].MedicalRecord.TestResults[i].ChildValues[j].Abnormal
           });
           }
         
         }
 
     }
-
 
     console.log("json result: ", testResultsJson);
 
@@ -60,7 +60,22 @@ fetch('https://645b796ba8f9e4d6e7698d85.mockapi.io/nhs/EMIS', {
        document.getElementById("divIndicatorResult").style.marginLeft = percentageResult + '%';
        document.getElementById("divIndicatorResult2").style.marginLeft = percentageResult + '%';
        document.getElementById("divIndicatorResult3").style.marginLeft = percentageResult + '%';
+
        
+       
+    } else if ( testResultsJson[0].testValue > 180) {
+      document.getElementById("divIndicatorResult2").style.marginLeft = '115%';
+    } else if ( testResultsJson[0].testValue < 135) {
+      document.getElementById("divIndicatorResult2").style.marginLeft = '-10px';
+    }
+
+    if(testResultsJson[0].testAbnormal == true) {
+      document.getElementById("divAbnormal").style.display = "inline";
+      document.getElementById("divNormal").style.display = "none";
+    } else {
+      document.getElementById("divAbnormal").style.display = "none";
+      document.getElementById("divNormal").style.display = "inline";
+
     }
 
   })
@@ -154,6 +169,10 @@ fetch('https://645b796ba8f9e4d6e7698d85.mockapi.io/nhs/EMIS', {
 
           <p class="nhsuk-u-margin-bottom-0">Normal range: <span id="testRange" style="float:right;"></span></p>
 
+          <hr class="nhsuk-u-margin-top-2 nhsuk-u-margin-bottom-2">
+
+          <p class="nhsuk-u-margin-bottom-0">Current status: <span id="testRange" style="float:right;"></span></p>
+
           <hr class="nhsuk-u-margin-top-2 nhsuk-u-margin-bottom-5">
 
           <details class="nhsuk-details nhsuk-u-margin-bottom-3">
@@ -186,7 +205,7 @@ fetch('https://645b796ba8f9e4d6e7698d85.mockapi.io/nhs/EMIS', {
                 </div>
               </div></div>
 
-
+          <div id="mainIndicator" style="display:block;">
               <div class="nhsuk-u-margin-bottom-0" style="width:61%; margin-left:3%; height:80px; ">
                 <div id="divIndicatorResult2" style="width:100px; text-align: center;">
                 <span class="nhsuk-body-s nhsuk-u-margin-bottom-1">Your result</span>
@@ -204,7 +223,18 @@ fetch('https://645b796ba8f9e4d6e7698d85.mockapi.io/nhs/EMIS', {
                 </div> 
             </div>
 
+            <strong id="divAbnormal" style="display:none;" class="nhsuk-tag nhsuk-tag--yellow">
+              Abnormal
+            </strong>
 
+            <strong id="divNormal" style="display:none;" class="nhsuk-tag nhsuk-tag--green">
+              Normal
+            </strong>
+
+          </div>
+
+
+          <div>
             <div class="nhsuk-u-margin-bottom-0" style="width:99%; margin-left:-35px; height:80px; ">
               <div id="divIndicatorResult3" style="width:80px; text-align: center;">
               <span class="nhsuk-body-s nhsuk-u-margin-bottom-1">Your result</span>
@@ -218,7 +248,8 @@ fetch('https://645b796ba8f9e4d6e7698d85.mockapi.io/nhs/EMIS', {
                   <span>135</span>
                   <span style="float:right;">180</span>
                 </div>
-              </div> 
+              </div>
+          </div>
 
             
               <p><a href="/your-health/gp-record/result-tracking">Result history</a></p>
