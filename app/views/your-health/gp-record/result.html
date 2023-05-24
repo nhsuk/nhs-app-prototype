@@ -50,23 +50,23 @@ fetch('https://645b796ba8f9e4d6e7698d85.mockapi.io/nhs/EMIS', {
 
     document.getElementById("patientTestName").innerHTML = testResultsJson[0].testName + ": <span id='patientTestValue' style='float:right;'>"+ testResultsJson[0].testValue + " " + testResultsJson[0].testUnits +"</span>";
     document.getElementById("testRange").innerHTML = testResultsJson[0].testRanges.Minimum + " - " + testResultsJson[0].testRanges.Maximum;
-    document.getElementById("indicatorResult").innerHTML = testResultsJson[0].testValue + " " + testResultsJson[0].testUnits;
-    document.getElementById("indicatorResult2").innerHTML = testResultsJson[0].testValue + " " + testResultsJson[0].testUnits;
-    document.getElementById("indicatorResult3").innerHTML = testResultsJson[0].testValue + " " + testResultsJson[0].testUnits;
+   // document.getElementById("indicatorResult").innerHTML = testResultsJson[0].testValue + " " + testResultsJson[0].testUnits;
+   // document.getElementById("indicatorResult2").innerHTML = testResultsJson[0].testValue + " " + testResultsJson[0].testUnits;
+   // document.getElementById("indicatorResult3").innerHTML = testResultsJson[0].testValue + " " + testResultsJson[0].testUnits;
 
     if( testResultsJson[0].testValue >= 135 && testResultsJson[0].testValue <= 180) {
        percentageResult = ((testResultsJson[0].testValue - 135) / 45 ) * 100;
 
-       document.getElementById("divIndicatorResult").style.marginLeft = percentageResult + '%';
-       document.getElementById("divIndicatorResult2").style.marginLeft = percentageResult + '%';
-       document.getElementById("divIndicatorResult3").style.marginLeft = percentageResult + '%';
+       //document.getElementById("divIndicatorResult").style.marginLeft = percentageResult + '%';
+       //document.getElementById("divIndicatorResult2").style.marginLeft = percentageResult + '%';
+       //document.getElementById("divIndicatorResult3").style.marginLeft = percentageResult + '%';
 
        
        
     } else if ( testResultsJson[0].testValue > 180) {
-      document.getElementById("divIndicatorResult2").style.marginLeft = '115%';
+      //document.getElementById("divIndicatorResult2").style.marginLeft = '115%';
     } else if ( testResultsJson[0].testValue < 135) {
-      document.getElementById("divIndicatorResult2").style.marginLeft = '-10px';
+      //document.getElementById("divIndicatorResult2").style.marginLeft = '-10px';
     }
 
     if(testResultsJson[0].testAbnormal == true) {
@@ -138,11 +138,11 @@ fetch('https://645b796ba8f9e4d6e7698d85.mockapi.io/nhs/EMIS', {
           <p>12 April 2023</p>
 
 
-          <hr>
+          <!--<hr>
           <h3 class="nhsuk-card__heading nhsuk-heading-xs nhsuk-u-margin-bottom-1">
             Viewed by healthcare professional
           </h3>
-          <p>Yes</p>
+          <p>Yes</p>-->
 
           <hr>
           <h3 class="nhsuk-card__heading nhsuk-heading-xs nhsuk-u-margin-bottom-1">
@@ -169,11 +169,11 @@ fetch('https://645b796ba8f9e4d6e7698d85.mockapi.io/nhs/EMIS', {
 
           <p class="nhsuk-u-margin-bottom-0">Normal range: <span id="testRange" style="float:right;"></span></p>
 
-          <hr class="nhsuk-u-margin-top-2 nhsuk-u-margin-bottom-2">
+          <hr class="nhsuk-u-margin-top-2 nhsuk-u-margin-bottom-4">
 
-          <p class="nhsuk-u-margin-bottom-0">Current status: <span id="testRange" style="float:right;"></span></p>
+         <!-- <p class="nhsuk-u-margin-bottom-0">Current status: <span id="testRange" style="float:right;"></span></p>
 
-          <hr class="nhsuk-u-margin-top-2 nhsuk-u-margin-bottom-5">
+          <hr class="nhsuk-u-margin-top-2 nhsuk-u-margin-bottom-5">-->
 
           <!--
           <details class="nhsuk-details nhsuk-u-margin-bottom-3">
@@ -258,7 +258,7 @@ fetch('https://645b796ba8f9e4d6e7698d85.mockapi.io/nhs/EMIS', {
           </details>-->
 
 
-          <strong id="divAbnormal" style="display:inline;" class="nhsuk-tag nhsuk-tag--yellow">
+          <strong id="divAbnormal" style="display:none;" class="nhsuk-tag nhsuk-tag--yellow">
             Abnormal
           </strong>
 
@@ -275,11 +275,11 @@ fetch('https://645b796ba8f9e4d6e7698d85.mockapi.io/nhs/EMIS', {
       <div class="nhsuk-card nhsuk-card-dark-background nhsuk-u-margin-bottom-5">
         <div class="nhsuk-card__content">
           <h3 class="nhsuk-card__heading nhsuk-heading-xs nhsuk-u-margin-bottom-0">
-            Total white cell count: <span style="float:right;">8.84 10*9/L</span>
+            Total white cell count: <span style="float:right;">11.84 10*9/L</span>
           </h3>
           <hr class="nhsuk-u-margin-top-2 nhsuk-u-margin-bottom-2">
 
-          <p class="nhsuk-u-margin-bottom-0">Normal range: <span style="float:right;">4.00 . - 11.00</span></p>
+          <p class="nhsuk-u-margin-bottom-0">Normal range: <span style="float:right;">4.00 - 11.00</span></p>
 
           <hr class="nhsuk-u-margin-top-2 nhsuk-u-margin-bottom-5">
 
@@ -299,11 +299,11 @@ fetch('https://645b796ba8f9e4d6e7698d85.mockapi.io/nhs/EMIS', {
           </h3>
           <hr class="nhsuk-u-margin-top-2 nhsuk-u-margin-bottom-2">
 
-          <p class="nhsuk-u-margin-bottom-0">Normal range: <span style="float:right;">135 - 180</span></p>
+          <p class="nhsuk-u-margin-bottom-0">Normal range: <span style="float:right;">150 - 400</span></p>
 
           <hr class="nhsuk-u-margin-top-2 nhsuk-u-margin-bottom-5">
 
-          <div class="nhsuk-u-margin-bottom-0" style="width:100px; margin-left:75%; text-align:center; background-color: white;">
+         <!-- <div class="nhsuk-u-margin-bottom-0" style="width:100px; margin-left:75%; text-align:center; background-color: white;">
             <span class="nhsuk-body-s nhsuk-u-margin-bottom-1">Your result</span>
             <span class="nhsuk-u-font-weight-bold">290 g/L</span><br>
             <span class="nhsuk-u-font-weight-bold"><img src="/images/downward-arrow.png" alt="indicator" width="30" height="30"></span>
@@ -316,14 +316,280 @@ fetch('https://645b796ba8f9e4d6e7698d85.mockapi.io/nhs/EMIS', {
                 <span style="float:right;">180</span>
               </div>
             </div> 
-        </div>
+        </div>-->
 
-        <div class="nhsuk-body-s">* May be normal for you. Please contact your GP.</div>
+        <strong class="nhsuk-tag nhsuk-tag--green">
+          Normal
+        </strong>
 
         </div>
       </div>
 
 
+      <div class="nhsuk-card nhsuk-card-dark-background nhsuk-u-margin-bottom-5">
+        <div class="nhsuk-card__content">
+          <h3 class="nhsuk-card__heading nhsuk-heading-xs nhsuk-u-margin-bottom-0">
+            Mean corpuscular volume (MCV): <span style="float:right;">100fL</span>
+          </h3>
+          <hr class="nhsuk-u-margin-top-2 nhsuk-u-margin-bottom-2">
+
+          <p class="nhsuk-u-margin-bottom-0">Normal range: <span style="float:right;">78 - 100</span></p>
+
+          <hr class="nhsuk-u-margin-top-2 nhsuk-u-margin-bottom-5">
+
+          <strong class="nhsuk-tag nhsuk-tag--green">
+            Normal
+          </strong>
+
+        </div>
+      </div>
+
+
+      <div class="nhsuk-card nhsuk-card-dark-background nhsuk-u-margin-bottom-5">
+        <div class="nhsuk-card__content">
+          <h3 class="nhsuk-card__heading nhsuk-heading-xs nhsuk-u-margin-bottom-0">
+            Haematocrit: <span style="float:right;">0.46</span>
+          </h3>
+          <hr class="nhsuk-u-margin-top-2 nhsuk-u-margin-bottom-2">
+
+          <p class="nhsuk-u-margin-bottom-0">Normal range: <span style="float:right;">0.40 - 0.52</span></p>
+
+          <hr class="nhsuk-u-margin-top-2 nhsuk-u-margin-bottom-5">
+
+          <strong class="nhsuk-tag nhsuk-tag--green">
+            Normal
+          </strong>
+
+        </div>
+      </div>
+
+
+      <div class="nhsuk-card nhsuk-card-dark-background nhsuk-u-margin-bottom-5">
+        <div class="nhsuk-card__content">
+          <h3 class="nhsuk-card__heading nhsuk-heading-xs nhsuk-u-margin-bottom-0">
+            Red blood cell (RBC): <span style="float:right;">4.56 10*12/L</span>
+          </h3>
+          <hr class="nhsuk-u-margin-top-2 nhsuk-u-margin-bottom-2">
+
+          <p class="nhsuk-u-margin-bottom-0">Normal range: <span style="float:right;">4.50 - 6.50</span></p>
+
+          <hr class="nhsuk-u-margin-top-2 nhsuk-u-margin-bottom-5">
+
+          <strong class="nhsuk-tag nhsuk-tag--green">
+            Normal
+          </strong>
+
+        </div>
+      </div>
+
+
+      <div class="nhsuk-card nhsuk-card-dark-background nhsuk-u-margin-bottom-5">
+        <div class="nhsuk-card__content">
+          <h3 class="nhsuk-card__heading nhsuk-heading-xs nhsuk-u-margin-bottom-0">
+            Mean corpusc. haemoglobin (MCH): <span style="float:right;">32.0 pg</span>
+          </h3>
+          <hr class="nhsuk-u-margin-top-2 nhsuk-u-margin-bottom-2">
+
+          <p class="nhsuk-u-margin-bottom-0">Normal range: <span style="float:right;">27.0 - 32.0</span></p>
+
+          <hr class="nhsuk-u-margin-top-2 nhsuk-u-margin-bottom-5">
+
+          <strong class="nhsuk-tag nhsuk-tag--green">
+            Normal
+          </strong>
+
+        </div>
+      </div>
+
+
+      <div class="nhsuk-card nhsuk-card-dark-background nhsuk-u-margin-bottom-5">
+        <div class="nhsuk-card__content">
+          <h3 class="nhsuk-card__heading nhsuk-heading-xs nhsuk-u-margin-bottom-0">
+            Mean corpusc. haemoglobin (MCH): <span style="float:right;">32.0 pg</span>
+          </h3>
+          <hr class="nhsuk-u-margin-top-2 nhsuk-u-margin-bottom-2">
+
+          <p class="nhsuk-u-margin-bottom-0">Normal range: <span style="float:right;">27.0 - 32.0</span></p>
+
+          <hr class="nhsuk-u-margin-top-2 nhsuk-u-margin-bottom-5">
+
+          <strong class="nhsuk-tag nhsuk-tag--green">
+            Normal
+          </strong>
+
+        </div>
+      </div>
+
+
+      <div class="nhsuk-card nhsuk-card-dark-background nhsuk-u-margin-bottom-5">
+        <div class="nhsuk-card__content">
+          <h3 class="nhsuk-card__heading nhsuk-heading-xs nhsuk-u-margin-bottom-0">
+            Red blood cell distribute width: <span style="float:right;">14.1</span>
+          </h3>
+          <hr class="nhsuk-u-margin-top-2 nhsuk-u-margin-bottom-2">
+
+          <p class="nhsuk-u-margin-bottom-0">Normal range: <span style="float:right;">11.5 - 15.0</span></p>
+
+          <hr class="nhsuk-u-margin-top-2 nhsuk-u-margin-bottom-5">
+
+          <strong class="nhsuk-tag nhsuk-tag--green">
+            Normal
+          </strong>
+        </div>
+      </div>
+
+      <div class="nhsuk-card nhsuk-card-dark-background nhsuk-u-margin-bottom-5">
+        <div class="nhsuk-card__content">
+          <h3 class="nhsuk-card__heading nhsuk-heading-xs nhsuk-u-margin-bottom-0">
+            Neutrophil count: <span style="float:right;">6.14 10*9/L</span>
+          </h3>
+          <hr class="nhsuk-u-margin-top-2 nhsuk-u-margin-bottom-2">
+
+          <p class="nhsuk-u-margin-bottom-0">Normal range: <span style="float:right;">2.00 - 7.50</span></p>
+
+          <hr class="nhsuk-u-margin-top-2 nhsuk-u-margin-bottom-5">
+
+          <strong class="nhsuk-tag nhsuk-tag--green">
+            Normal
+          </strong>
+        </div>
+      </div>
+
+      <div class="nhsuk-card nhsuk-card-dark-background nhsuk-u-margin-bottom-5">
+        <div class="nhsuk-card__content">
+          <h3 class="nhsuk-card__heading nhsuk-heading-xs nhsuk-u-margin-bottom-0">
+            Lymphocyte count: <span style="float:right;">1.54 10*9/L</span>
+          </h3>
+          <hr class="nhsuk-u-margin-top-2 nhsuk-u-margin-bottom-2">
+
+          <p class="nhsuk-u-margin-bottom-0">Normal range: <span style="float:right;">2.00 - 7.50</span></p>
+
+          <hr class="nhsuk-u-margin-top-2 nhsuk-u-margin-bottom-5">
+
+          <strong class="nhsuk-tag nhsuk-tag--green">
+            Normal
+          </strong>
+        </div>
+      </div>
+
+      <div class="nhsuk-card nhsuk-card-dark-background nhsuk-u-margin-bottom-5">
+        <div class="nhsuk-card__content">
+          <h3 class="nhsuk-card__heading nhsuk-heading-xs nhsuk-u-margin-bottom-0">
+            Monocyte count: <span style="float:right;">0.35 10*9/L</span>
+          </h3>
+          <hr class="nhsuk-u-margin-top-2 nhsuk-u-margin-bottom-2">
+
+          <p class="nhsuk-u-margin-bottom-0">Normal range: <span style="float:right;">0.20 - 0.80</span></p>
+
+          <hr class="nhsuk-u-margin-top-2 nhsuk-u-margin-bottom-5">
+
+          <strong class="nhsuk-tag nhsuk-tag--green">
+            Normal
+          </strong>
+        </div>
+      </div>
+
+
+      <div class="nhsuk-card nhsuk-card-dark-background nhsuk-u-margin-bottom-5">
+        <div class="nhsuk-card__content">
+          <h3 class="nhsuk-card__heading nhsuk-heading-xs nhsuk-u-margin-bottom-0">
+            Eosinophil count: <span style="float:right;">0.45 10*9/L</span>
+          </h3>
+          <hr class="nhsuk-u-margin-top-2 nhsuk-u-margin-bottom-2">
+
+          <p class="nhsuk-u-margin-bottom-0">Normal range: <span style="float:right;">0.04 - 0.40</span></p>
+
+          <hr class="nhsuk-u-margin-top-2 nhsuk-u-margin-bottom-5">
+
+          <strong class="nhsuk-tag nhsuk-tag--green">
+            Normal
+          </strong>
+        </div>
+      </div>
+
+      <div class="nhsuk-card nhsuk-card-dark-background nhsuk-u-margin-bottom-5">
+        <div class="nhsuk-card__content">
+          <h3 class="nhsuk-card__heading nhsuk-heading-xs nhsuk-u-margin-bottom-0">
+            Basophil count: <span style="float:right;">0.03 10*9/L</span>
+          </h3>
+          <hr class="nhsuk-u-margin-top-2 nhsuk-u-margin-bottom-2">
+
+          <p class="nhsuk-u-margin-bottom-0">Normal range: <span style="float:right;"> - 0.10</span></p>
+
+          <hr class="nhsuk-u-margin-top-2 nhsuk-u-margin-bottom-5">
+
+          <strong class="nhsuk-tag nhsuk-tag--green">
+            Normal
+          </strong>
+        </div>
+      </div>
+
+
+      <div class="nhsuk-card nhsuk-card-dark-background nhsuk-u-margin-bottom-5">
+        <div class="nhsuk-card__content">
+          <h3 class="nhsuk-card__heading nhsuk-heading-xs nhsuk-u-margin-bottom-0">
+            Large unstained cells: <span style="float:right;">0.13 10*9/L</span>
+          </h3>
+          <hr class="nhsuk-u-margin-top-2 nhsuk-u-margin-bottom-2">
+
+          <p class="nhsuk-u-margin-bottom-0">Normal range: <span style="float:right;"> - 0.60</span></p>
+
+          <hr class="nhsuk-u-margin-top-2 nhsuk-u-margin-bottom-5">
+
+          <strong class="nhsuk-tag nhsuk-tag--green">
+            Normal
+          </strong>
+        </div>
+      </div>
+
+
+      <div class="nhsuk-card nhsuk-card-dark-background nhsuk-u-margin-bottom-5">
+        <div class="nhsuk-card__content">
+          <h3 class="nhsuk-card__heading nhsuk-heading-xs nhsuk-u-margin-bottom-0">
+            Percentage hypochromic cells: <span style="float:right;">1%</span>
+          </h3>
+          <hr class="nhsuk-u-margin-top-2 nhsuk-u-margin-bottom-2">
+
+          <p class="nhsuk-u-margin-bottom-0">Normal range: <span style="float:right;"> - </span></p>
+
+          <hr class="nhsuk-u-margin-top-2 nhsuk-u-margin-bottom-5">
+
+          <strong class="nhsuk-tag nhsuk-tag--green">
+            Normal
+          </strong>
+        </div>
+      </div>
+
     </div>
   </div>
+
+  <section class="nhsuk-section">
+    <div class="nhsuk-width-container">
+    <div class="nhsuk-grid-row nhsuk-u-margin-bottom-8">
+        <ul class="panel-link nhsuk-u-margin-top-5">
+          <li class="panel-link__item">
+            <a class="panel-link__link" href="/your-health/data-opt-out/overview">
+            <h2 class="panel-link__heading nhsuk-heading-s">Learn more about test results</h2>
+            </a>
+           </li>
+        </ul>
+      
+        <p>You may see medical abbreviations you are not familiar with.</p>
+
+        <div class="nhsuk-action-link">
+          <a class="nhsuk-action-link__link" href="https://www.nhs.uk/using-the-nhs/nhs-services/the-nhs-app/abbreviations/">
+            <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+            </svg>
+            <span class="nhsuk-action-link__text">Help with abbreviations</span>
+          </a>
+        </div>
+
+        
+      </div>
+
+       
+      </div>
+      </section>
 {% endblock %}
