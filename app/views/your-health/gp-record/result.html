@@ -65,8 +65,11 @@ fetch('https://645b796ba8f9e4d6e7698d85.mockapi.io/nhs/EMIS', {
        
     } else if ( testResultsJson[0].testValue > 180) {
       document.getElementById("divIndicatorResult2").style.marginLeft = '115%';
+      document.getElementById("divIndicatorResult").style.marginLeft = '115%';
+      document.getElementById("divIndicatorResult3").style.marginLeft = '105%';
     } else if ( testResultsJson[0].testValue < 135) {
-      document.getElementById("divIndicatorResult2").style.marginLeft = '-10px';
+      document.getElementById("divIndicatorResult2").style.marginLeft = '-20px';
+      document.getElementById("divIndicatorResult").style.marginLeft = '-15px';
     }
 
     if(testResultsJson[0].testAbnormal == true) {
@@ -168,10 +171,6 @@ fetch('https://645b796ba8f9e4d6e7698d85.mockapi.io/nhs/EMIS', {
           <hr class="nhsuk-u-margin-top-2 nhsuk-u-margin-bottom-2">
 
           <p class="nhsuk-u-margin-bottom-0">Normal range: <span id="testRange" style="float:right;"></span></p>
-
-          <hr class="nhsuk-u-margin-top-2 nhsuk-u-margin-bottom-2">
-
-          <p class="nhsuk-u-margin-bottom-0">Current status: <span id="testRange" style="float:right;"></span></p>
 
           <hr class="nhsuk-u-margin-top-2 nhsuk-u-margin-bottom-5">
 
