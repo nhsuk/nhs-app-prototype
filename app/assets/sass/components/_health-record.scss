@@ -19,11 +19,42 @@
   bottom: -15px;
 }
 
-.recordCountTests {
+.recordCountImmunisation {
   color: #212b32;
   position: absolute;
   right: 50px;
   bottom: -70px;
+}
+
+
+.recordCountHealthCondition {
+  color: #212b32;
+  position: absolute;
+  right: 50px;
+  bottom: -125px;
+}
+
+.recordCountTests {
+  color: #212b32;
+  position: absolute;
+  right: 50px;
+  bottom: -175px;
+}
+
+
+.recordCountConsults {
+  color: #212b32;
+  position: absolute;
+  right: 50px;
+  bottom: -230px;
+}
+
+
+.recordCountDocs {
+  color: #212b32;
+  position: absolute;
+  right: 50px;
+  bottom: -285px;
 }
 
 .recordCountAcute {
