@@ -1,6 +1,6 @@
 {% set PROTOTYPEURL = "your-health/gp-record" %}
 {% set serviceName = "NHS App" %}
-{% set contentTitle = "2018 to 2022 test results" %}
+{% set contentTitle = "Test results" %}
 {% set yourHealthActive = "active" %}
 {% block pageScripts %}
 {% endblock %}
@@ -13,8 +13,6 @@
 {% block pageTitle %}
   {{ contentTitle }} - {{ serviceName }}
 {% endblock %}
-
-
 
 
 <!-- Breadcrumb goes inside this block -->
@@ -37,48 +35,27 @@
 
 {% block content %}
 <div class="nhsuk-grid-row">
-  <div class="nhsuk-grid-column-two-thirds">
+  <div class="nhsuk-grid-column-full">
 
     <h1 class="nhsuk-heading-xl nhsuk-u-margin-bottom-5">{{ contentTitle }}</h1>
 
-
-      <ul class="panel-link">
-
-        <li class="panel-link__item">
-          <a class="panel-link__link" href="">
-            <h2 class="panel-link__heading nhsuk-heading-xs">2022</h2>
-          </a>
-        </li>
-
-        <li class="panel-link__item">
-          <a class="panel-link__link" href="">
-            <h2 class="panel-link__heading nhsuk-heading-xs">2021</h2>
-          </a>
-        </li>
-
-        <li class="panel-link__item">
-          <a class="panel-link__link" href="">
-            <h2 class="panel-link__heading nhsuk-heading-xs">2020</h2>
-          </a>
-        </li>
-
-        <li class="panel-link__item">
-          <a class="panel-link__link" href="">
-            <h2 class="panel-link__heading nhsuk-heading-xs">2019</h2>
-          </a>
-        </li>
-
-        <li class="panel-link__item">
-          <a class="panel-link__link" href="">
-            <h2 class="panel-link__heading nhsuk-heading-xs">2018</h2>
-          </a>
-        </li>
-
-
-
-      </ul>
+    <h2>You have no test results from 2020.</h2>
 
   </div>
 </div>
+
+<section class="nhsuk-section">
+  <div class="nhsuk-width-container">
+  <div class="nhsuk-grid-row nhsuk-u-margin-bottom-8">
+      <ul class="panel-link nhsuk-u-margin-top-5">
+        <li class="panel-link__item">
+          <a class="panel-link__link" href="/your-health/gp-record/tests-all">
+          <h2 class="panel-link__heading nhsuk-heading-s">What to do if something is missing</h2>
+          </a>
+         </li>
+      </ul>
+  </div>
+  </div>
+</section>
 
 {% endblock %}

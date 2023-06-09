@@ -733,3 +733,10 @@ main .app-list-signage a[href=""] {
   border-right: 3px solid black;
   height: 50px;
 }
+
+.recordCountYear {
+  color: #212b32;
+  position: relative;
+  float:right;
+  margin-top:-28px;
+}

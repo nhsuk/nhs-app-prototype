@@ -1,6 +1,6 @@
 {% set PROTOTYPEURL = "your-health/gp-record" %}
 {% set serviceName = "NHS App" %}
-{% set contentTitle = "My Test Results" %}
+{% set contentTitle = "Test Results" %}
 {% set yourHealthActive = "active" %}
 {% block pageScripts %}
 <script>
@@ -77,25 +77,168 @@ fetch('https://645b796ba8f9e4d6e7698d85.mockapi.io/nhs/patients/1', {
 
       <h1 class="nhsuk-heading-xl nhsuk-u-margin-bottom-5">{{ contentTitle }}</h1>
 
-      <div class="nhsuk-card nhsuk-card-dark-background nhsuk-u-margin-bottom-2">
-        <div class="nhsuk-card__content">
-          <h3 class="nhsuk-card__heading nhsuk-heading-xs nhsuk-u-margin-bottom-1">
-            12 April 2023
-          </h3>
+      <h3>Showing 2023 test results</h3>
 
-          <p><a href="/your-health/gp-record/result">Full blood count</a></p>
-        </div>
-      </div>
+      <h4>24 May 2023</h4>
 
       <div class="nhsuk-card nhsuk-card-dark-background nhsuk-u-margin-bottom-2">
         <div class="nhsuk-card__content">
-          <h3 class="nhsuk-card__heading nhsuk-heading-xs nhsuk-u-margin-bottom-1">
-            22 March 2022
-          </h3>
 
-          <p><a href="#">Full blood count</a></p>
+          <h4 class="nhsuk-u-margin-bottom-2"><a href="/your-health/gp-record/result">Full blood count - FBC</a></h4>
+
+          <h4 class="nhsuk-card__heading nhsuk-heading-xs nhsuk-u-margin-bottom-2">
+            Your healthcare professional's comment
+          </h4>
+
+          <p>
+            Abnormal - but expected. Ask patient to make/keep appointment routine (non-urgent)
+          </p>
+
         </div>
       </div>
+
+
+      <div class="nhsuk-card nhsuk-card-dark-background nhsuk-u-margin-bottom-2">
+        <div class="nhsuk-card__content">
+
+          <h4 class="nhsuk-u-margin-bottom-2"><a href="/your-health/gp-record/result">Liver blood tests</a></h4>
+
+          <h4 class="nhsuk-card__heading nhsuk-heading-xs nhsuk-u-margin-bottom-2">
+            Your healthcare professional's comment
+          </h4>
+
+          <p>
+            Please contact GP for appointment
+          </p>
+
+        </div>
+      </div>
+    
+
+      <div class="nhsuk-card nhsuk-card-dark-background nhsuk-u-margin-bottom-2">
+        <div class="nhsuk-card__content">
+
+          <h4 class="nhsuk-u-margin-bottom-2"><a href="/your-health/gp-record/result">Blood glucose (Hb A1c)</a></h4>
+
+          <h4 class="nhsuk-card__heading nhsuk-heading-xs nhsuk-u-margin-bottom-2">
+            Your healthcare professional's comment
+          </h4>
+
+          <p>
+            -
+          </p>
+
+        </div>
+      </div>
+
+
+      <div class="nhsuk-card nhsuk-card-dark-background nhsuk-u-margin-bottom-2">
+        <div class="nhsuk-card__content">
+
+          <h4 class="nhsuk-u-margin-bottom-2"><a href="/your-health/gp-record/result">Cholesterol</a></h4>
+
+          <h4 class="nhsuk-card__heading nhsuk-heading-xs nhsuk-u-margin-bottom-2">
+            Your healthcare professional's comment
+          </h4>
+
+          <p>
+            Borderline - speak to nurse
+          </p>
+
+        </div>
+      </div>
+
+      <div class="nhsuk-card nhsuk-card-dark-background nhsuk-u-margin-bottom-6">
+        <div class="nhsuk-card__content">
+
+          <h4 class="nhsuk-u-margin-bottom-2"><a href="/your-health/gp-record/result">Urea and electrolytes (U & E) </a></h4>
+
+          <h4 class="nhsuk-card__heading nhsuk-heading-xs nhsuk-u-margin-bottom-2">
+            Your healthcare professional's comment
+          </h4>
+
+          <p>
+            Normal - Take no action
+          </p>
+
+        </div>
+      </div>
+
+
+      <h4>12 April 2023</h4>
+
+      <div class="nhsuk-card nhsuk-card-dark-background nhsuk-u-margin-bottom-6">
+        <div class="nhsuk-card__content">
+
+          <h4 class="nhsuk-u-margin-bottom-2"><a href="/your-health/gp-record/result">Full blood count - FBC</a></h4>
+
+          <h4 class="nhsuk-card__heading nhsuk-heading-xs nhsuk-u-margin-bottom-2">
+            Your healthcare professional's comment
+          </h4>
+
+          <p>
+            (Hague, Syed) - Abnormal, but expected
+          </p>
+
+        </div>
+      </div>
+
+      <h4>3 March 2023</h4>
+
+      <div class="nhsuk-card nhsuk-card-dark-background nhsuk-u-margin-bottom-2">
+        <div class="nhsuk-card__content">
+
+          <h4 class="nhsuk-u-margin-bottom-2"><a href="/your-health/gp-record/result">Full blood count - FBC</a></h4>
+
+          <h4 class="nhsuk-card__heading nhsuk-heading-xs nhsuk-u-margin-bottom-2">
+            Your healthcare professional's comment
+          </h4>
+
+          <p>
+            (Hague, Syed) - Abnormal, but expected
+          </p>
+
+        </div>
+      </div>
+
+      <div class="nhsuk-card nhsuk-card-dark-background nhsuk-u-margin-bottom-6">
+        <div class="nhsuk-card__content">
+
+          <h4 class="nhsuk-u-margin-bottom-2"><a href="/your-health/gp-record/result">Urea and electrolytes (U & E) </a></h4>
+
+          <h4 class="nhsuk-card__heading nhsuk-heading-xs nhsuk-u-margin-bottom-2">
+            Your healthcare professional's comment
+          </h4>
+
+          <p>
+            Normal - Take no action
+          </p>
+
+        </div>
+      </div>
+
+      <h4>4 Feb 2023</h4>
+
+      <div class="nhsuk-card nhsuk-card-dark-background nhsuk-u-margin-bottom-6">
+        <div class="nhsuk-card__content">
+
+          <h4 class="nhsuk-u-margin-bottom-2"><a href="/your-health/gp-record/result">Full blood count - FBC</a></h4>
+
+          <h4 class="nhsuk-card__heading nhsuk-heading-xs nhsuk-u-margin-bottom-2">
+            Your healthcare professional's comment
+          </h4>
+
+          <p>
+            Normal - Take no action
+          </p>
+
+        </div>
+      </div>
+
+
+
+
+
 
 
     </div>
@@ -106,8 +249,8 @@ fetch('https://645b796ba8f9e4d6e7698d85.mockapi.io/nhs/patients/1', {
     <div class="nhsuk-grid-row nhsuk-u-margin-bottom-8">
         <ul class="panel-link nhsuk-u-margin-top-5">
           <li class="panel-link__item">
-            <a class="panel-link__link" href="/your-health/gp-record/tests-older">
-            <h2 class="panel-link__heading nhsuk-heading-s">View older test results</h2>
+            <a class="panel-link__link" href="/your-health/gp-record/tests-all">
+            <h2 class="panel-link__heading nhsuk-heading-s">View all test results</h2>
             </a>
            </li>
         </ul>
