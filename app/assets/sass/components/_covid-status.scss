@@ -103,6 +103,18 @@
   background-repeat: no-repeat;
 }
 
+.icon-right {
+  background-image: url(../images/icon-arrow-right-2.svg);
+  background-position: right 0em top -0.3em;
+  background-repeat: no-repeat;
+}
+
+.icon-left {
+  background-image: url(../images/icon-arrow-left.svg);
+  background-position: left 0em top -0.3em;
+  background-repeat: no-repeat;
+}
+
 
 .card-with-chevron-down-expanded {
   background-image: url(../images/icon_arrow_down.svg);
