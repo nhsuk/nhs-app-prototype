@@ -3,7 +3,7 @@
       <div class="nhsuk-grid-column-full">
 <ul>
   <li class="{{ adviceActive }}" id="btn_symptoms">
-      <a href="/advice/hub">
+      <a href="/advice/hub" aria-label="Advice">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
           <defs>
           </defs>
@@ -28,7 +28,7 @@
 
 
   <li class="{{ appointmentsActive }}" id="btn_appointments">
-    <a href="/appointments/hub">
+    <a href="/appointments/hub" aria-label="Appointments">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 18">
         <defs>
         </defs>
@@ -52,7 +52,7 @@
   </li>
 
   <li class="{{ prescriptionsActive }}" id="btn_prescriptions">
-    <a href="/prescriptions/hub">
+    <a href="/prescriptions/hub" aria-label="Prescriptions">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
         <defs>
         </defs>
@@ -78,7 +78,7 @@
   </li>
 
   <li class="{{ yourHealthActive }}" id="btn_record">
-    <a href="/your-health/hub">
+    <a href="/your-health/hub" aria-label="Your Health">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
         <defs>
         </defs>
@@ -99,7 +99,7 @@
 
 
   <li class="{{ messagingActive }}">
-    <a href="/messages/hub">
+    <a href="/messages/hub" aria-label="Messages">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18.9 18">
         <g style="{{ "stroke:#005EB8;" if messagingActive == 'active' else "stroke:#425563;" }} {{ "fill:#005EB8;" if messagingActive == 'active' else "fill:transparent;" }}" id="Group-2" transform="translate(1.000000, 1.000000)" fill-rule="nonzero" stroke="#FFFFFF" stroke-width="1.6">
           {% if messagingActive === "active"  %}
