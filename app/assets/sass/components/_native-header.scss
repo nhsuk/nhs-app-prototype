@@ -46,13 +46,18 @@ span {
 }
 
 
-.nhs-app-header__icon_header-help {
-  width: 24px;
-  height: 24px;
+.nhs-app-header__icon_header-help-more {
+  width: 70px;
   float: right;
   margin-right: 18px;
   margin-top: -20px;
+}
 
+.nhs-app-header__icon_header-help {
+  width: 24px;
+  height: 24px;
+  float: left;
+  margin-right: 18px;
 }
 
 .header-label-help {
@@ -71,18 +76,10 @@ span {
 }
 }
 
-
-
-
-
-
-
 .nhs-app-header__icon_header-more {
   width: 24px;
   height: 24px;
-  float: right;
-  margin-right: 18px;
-  margin-top: -20px;
+  float: left;
 
 }
 
