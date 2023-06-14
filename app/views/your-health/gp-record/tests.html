@@ -1,6 +1,6 @@
 {% set PROTOTYPEURL = "your-health/gp-record" %}
 {% set serviceName = "NHS App" %}
-{% set contentTitle = "Test Results" %}
+{% set contentTitle = "Test results" %}
 {% set yourHealthActive = "active" %}
 {% block pageScripts %}
 <script>
@@ -77,9 +77,9 @@ fetch('https://645b796ba8f9e4d6e7698d85.mockapi.io/nhs/patients/1', {
 
       <h1 class="nhsuk-heading-xl nhsuk-u-margin-bottom-5">{{ contentTitle }}</h1>
 
-      <h3 class="nhsuk-u-font-size-24">Showing 2023 test results</h3>
+      <h2 class="nhsuk-heading-l">Showing results from 2023</h2>
 
-      <h4 class="nhsuk-u-font-size-20">24 May 2023</h4>
+      <h3 class="nhsuk-heading-m">24 May 2023</h3>
 
       <div class="nhsuk-card nhsuk-card-dark-background nhsuk-u-margin-bottom-2">
         <div class="nhsuk-card__content">
