@@ -41,12 +41,20 @@
 
       <h1 class="nhsuk-heading-xl nhsuk-u-margin-bottom-5">{{ contentTitle }}</h1>
 
-
-      {{ warningCallout({
-        "heading": "Important",
-        "classes": "nhsuk-u-margin-top-6 nhsuk-u-margin-bottom-5",
+      
+      <!-- snippet of code replaced with below code as it automatically adds a colon after the heading which is being
+        read out by the voice reader.
+        {{ warningCallout({
+        "heading": "Information",
         "HTML": "<p>Your record may contain sensitive information. If someone is pressuring you for this information, contact your GP surgery immediately.</p><p>You have a legal right to access the information in your record. </p>"
-      }) }}
+      }) }}-->
+
+      <div class="nhsuk-warning-callout">
+        <h3 class="nhsuk-warning-callout__label">
+          Important
+        </h3>
+        <p>Your record may contain sensitive information. If someone is pressuring you for this information, contact your GP surgery immediately.</p><p>You have a legal right to access the information in your record. </p>
+      </div>
 
       <p>Your record shows personal data, such as your details, allergies and medications.</p>
       <p>Depending on what your GP surgery shares, you may also see:</p>
